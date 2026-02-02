@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Portafolio de Magdyel - Diseñadora Gráfica</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f43494",
+                        "background-light": "#f8f5f7",
+                        "background-dark": "#221019",
+                        "kawaii-blue": "#AEE2FF",
+                        "kawaii-yellow": "#FFF5BA",
+                        "kawaii-purple": "#E0BBE4",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                    boxShadow: {
+                        "chunky": "4px 4px 0px 0px rgba(24, 17, 20, 0.1)",
+                        "chunky-primary": "4px 4px 0px 0px rgba(244, 52, 148, 0.4)",
+                        "window": "0 20px 50px -12px rgba(0, 0, 0, 0.15)"
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f8f5f7;
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #f43494;
+            border-radius: 6px;
+            border: 3px solid #f8f5f7;
+        }
+
+        /* Bubbly text outline effect */
+        .text-bubbly {
+            -webkit-text-stroke: 4px white;
+            paint-order: stroke fill;
+        }
+
+        .cursor-pencil {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="%23f43494"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg>') 0 24, auto;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display overflow-hidden h-screen w-screen selection:bg-primary selection:text-white cursor-pencil">
+    <!-- Desktop Environment Container -->
+    <div class="relative w-full h-full bg-kawaii-blue flex flex-col group/design-root overflow-hidden">
+        <!-- Cloud Decorations (Background) -->
+        <div class="absolute top-10 left-20 w-32 h-12 bg-white/40 rounded-full blur-xl pointer-events-none"></div>
+        <div class="absolute top-40 right-40 w-48 h-16 bg-white/30 rounded-full blur-xl pointer-events-none"></div>
+        <div class="absolute bottom-32 left-1/3 w-64 h-20 bg-white/20 rounded-full blur-2xl pointer-events-none"></div>
+        <!-- Top Menu Bar (OS Style) -->
+        <header
+            class="relative z-50 flex items-center justify-between px-6 py-2 bg-white/80 backdrop-blur-sm border-b border-white/50 shadow-sm">
+            <div class="flex items-center gap-4">
+                <div
+                    class="flex items-center gap-2 bg-primary/10 px-3 py-1 rounded-full cursor-pointer hover:bg-primary/20 transition-colors">
+                    <span class="material-symbols-outlined text-primary text-[20px]">pets</span>
+                    <span class="text-[#181114] font-bold text-sm tracking-wide">Magdyel OS</span>
+                </div>
+                <nav class="hidden md:flex items-center gap-4 text-sm font-semibold text-[#181114]/70">
+                    <a class="hover:text-primary transition-colors">Archivo</a>
+                    <a class="hover:text-primary transition-colors">Editar</a>
+                    <a class="hover:text-primary transition-colors">Ver</a>
+                    <a class="hover:text-primary transition-colors">Ayuda</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 px-3 py-1 bg-white rounded-full shadow-sm border border-gray-100">
+                    <span class="material-symbols-outlined text-primary text-[18px]">wifi</span>
+                    <span class="text-xs font-bold text-[#181114]">100%</span>
+                    <span class="material-symbols-outlined text-[#181114] text-[18px]">battery_full</span>
+                </div>
+                <div class="text-[#181114] font-bold text-sm" id="system-clock">11:11 PM</div>
+            </div>
+        </header>
+        <!-- Main Desktop Area -->
+        <main class="flex-1 relative w-full h-full p-6 overflow-hidden" id="desktop-main">
+            <!-- Desktop Text/Welcome -->
+            <div class="absolute top-8 left-0 w-full flex justify-center pointer-events-none z-0">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-[#181114] text-center drop-shadow-sm opacity-90">
+                    <span class="text-white text-stroke-primary drop-shadow-md block md:inline">Bienvenido a</span>
+                    <span class="text-primary bg-white px-4 rounded-xl rotate-2 inline-block shadow-chunky">Mi
+                        Escritorio!</span>
+                    <span class="text-2xl align-middle ml-2">(◕‿◕)</span>
+                </h1>
+            </div>
+            <!-- Desktop Icons Grid -->
+            <div class="absolute top-24 left-6 md:left-10 grid grid-cols-1 gap-8 z-10 w-32">
+                <!-- Icon 1 -->
+                <button class="flex flex-col items-center gap-2 group focus:outline-none desktop-icon"
+                    data-target="brand-window">
+                    <div class="w-20 h-20 bg-white rounded-[2rem] flex items-center justify-center shadow-lg border-4 border-transparent group-hover:border-primary/30 transition-all group-hover:scale-105 active:scale-95 bg-cover bg-center"
+                        data-alt="Cute bear folder icon"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfOaM615mruN9gml4f1r6i7KJCEFxtz6mNHFDJ7qZTUWUek0Lrj9UgXKbFYSmMdH91PL1BkzOPwR_KjlhCf-hGjLAMwP11EVj8Se3niaI_ZXgxoq_jJ2F7DyFhG5927x3yGQwVeOD7ca0B-niWI2PRUfpoqOits6V092sCY46KR75ptPTwbOtdy_ELhlCp1HfVP6mp4gKy7mltAQ9cCAV9-8v0bUf62P_jQv3AvQlKoDVbjK7sGSJfDS71O1tD-NL3vt_rm0GiPBKE');">
+                    </div>
+                    <div class="bg-white/80 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm border border-white/50">
+                        <span class="text-xs font-bold text-[#181114] whitespace-nowrap">Diseño de Marca</span>
+                    </div>
+                </button>
+                <!-- Icon 2 -->
+                <button class="flex flex-col items-center gap-2 group focus:outline-none desktop-icon"
+                    data-target="web-window">
+                    <div class="w-20 h-20 bg-white rounded-[2rem] flex items-center justify-center shadow-lg border-4 border-transparent group-hover:border-primary/30 transition-all group-hover:scale-105 active:scale-95 bg-cover bg-center"
+                        data-alt="Cute cat folder icon"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGbh2Xi4_GYWrqRON_H6MCF3UBzo6FofEYygCPEhq4ZKfhAojW0jWy8UtzfKrQu_6gMryAxxXVONYeQWgzYR5jCPkYa36FmQ6cQrFh6Fi0lYXpoqYPXSCQri8NBGc8zemevhhCkhIpHJ7niZAZhwXhmF7_dCEJsu_2ErH2uqZiOYRrwMDsp_K_gdgdWpS13fEZX-N8XCSG6twfErXMsY5XYQxJ345zGlUGnP0pn9cAxe_SPzq8WR11uwnoW9QDjMvSuRkSC17V5flh');">
+                    </div>
+                    <div class="bg-white/80 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm border border-white/50">
+                        <span class="text-xs font-bold text-[#181114] whitespace-nowrap">Proyectos Web</span>
+                    </div>
+                </button>
+                <!-- Icon 3 -->
+                <button class="flex flex-col items-center gap-2 group focus:outline-none desktop-icon"
+                    data-target="illustration-window">
+                    <div class="w-20 h-20 bg-white rounded-[2rem] flex items-center justify-center shadow-lg border-4 border-transparent group-hover:border-primary/30 transition-all group-hover:scale-105 active:scale-95 bg-cover bg-center"
+                        data-alt="Cute bunny folder icon"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDcXpwy7px9gvFxVzqCyisfAISlGODOcz-eC6UMuFrU98fBw7_bmf0oKQIlIC58S9JzdQpc-2PNZw3FYfwR3zUY_RhRx3VhwwXEdR3P3jB2Ncc1nYUfHROsHDrfVuTY0RoSvCZODF0DtW9xs1wpkP5RPatdI_MMH_6Lw_dfD7tmZrRDXHTMorc-aZoXIlyH-9cELBW25srxeiKLzOY7ZzdHWcpJCoVbVfk_DQn_Bu94Nrzzdh3e5ic0PwhkGz8tgXVk8e_zKG-M0ao9');">
+                    </div>
+                    <div class="bg-white/80 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm border border-white/50">
+                        <span class="text-xs font-bold text-[#181114] whitespace-nowrap">Ilustraciones</span>
+                    </div>
+                </button>
+            </div>
+            <div class="absolute top-24 left-40 md:left-48 grid grid-cols-1 gap-8 z-10 w-32">
+                <!-- Icon 4 (Playground) -->
+                <button class="flex flex-col items-center gap-2 group focus:outline-none desktop-icon"
+                    data-target="playground-window">
+                    <div class="w-20 h-20 bg-white rounded-[2rem] flex items-center justify-center shadow-lg border-4 border-transparent group-hover:border-primary/30 transition-all group-hover:scale-105 active:scale-95 bg-cover bg-center"
+                        data-alt="Cute star folder icon"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCtMszYIH-hsMQhice7llgKq3vzjvPmzykDCqG-YmYhurE27H6qYb3NT8TQ65GysLoHBwytckvq774PrhdL5z3hlYWMJDGk9-s4C1ZTGwbu2QNalzFaGnsmZH7PlTcRr3IHy-2JlEuFMpZRv8h40DpZUWFI5LUHY913iNZBYUrZdDw3Bw32J7qd7p43GV545JWaFVFg1Q43zSJ8jwm_INWELRg--L2tSvtk2se2hshHkLFJb4ur9AduTkUAEQw2hRZ_cLugCRsE8sR0');">
+                    </div>
+                    <div class="bg-white/80 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm border border-white/50">
+                        <span class="text-xs font-bold text-[#181114] whitespace-nowrap">Experimentos</span>
+                    </div>
+                </button>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- VENTANAS DE PROYECTOS - UNA POR CADA CARPETA -->
+            <!-- ============================================ -->
+
+            <!-- VENTANA 1: DISEÑO DE MARCA -->
+            <!-- Para personalizar: Cambia las imágenes URL, título del proyecto, descripción y tags -->
+            <div id="brand-window"
+                class="project-window hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] z-20 w-[90%] max-w-[800px] flex flex-col rounded-xl shadow-window overflow-hidden border-4 border-kawaii-purple bg-white">
+                <div class="bg-kawaii-purple px-4 py-3 flex items-center justify-between cursor-move window-header">
+                    <div class="flex items-center gap-2">
+                        <div class="flex gap-2">
+                            <div class="w-3 h-3 rounded-full bg-[#FF6B6B] border border-black/10"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#FFD93D] border border-black/10"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#6BCB77] border border-black/10"></div>
+                        </div>
+                        <div class="ml-4 flex items-center gap-2 bg-white/30 px-3 py-0.5 rounded-full">
+                            <span class="material-symbols-outlined text-white text-sm">folder_open</span>
+                            <span class="text-white text-xs font-bold tracking-wide">Diseño de Marca</span>
+                        </div>
+                    </div>
+                    <button class="text-white hover:bg-white/20 rounded-full p-1 close-window-btn">
+                        <span class="material-symbols-outlined text-lg">close</span>
+                    </button>
+                </div>
+                <div class="p-0 overflow-y-auto max-h-[60vh] bg-background-light">
+                    <div
+                        class="px-6 py-3 border-b border-[#f5f0f2] bg-white flex items-center gap-2 text-sm text-[#8a6075]">
+                        <span class="material-symbols-outlined text-lg">home</span>
+                        <span>/</span>
+                        <span class="font-bold text-primary">Diseño de Marca</span>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <!-- PROYECTO 1 DE DISEÑO DE MARCA -->
+                        <!-- INSTRUCCIONES: Reemplaza la URL de la imagen principal, título, descripción y tags -->
+                        <div class="flex flex-col lg:flex-row gap-6 items-start mb-8">
+                            <!-- IMAGEN PRINCIPAL - Cambia el URL aquí -->
+                            <div class="w-full lg:w-1/2 aspect-video bg-cover bg-center rounded-xl shadow-inner border-2 border-[#f5f0f2]"
+                                style="background-image: url('https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&h=400&fit=crop');">
+                            </div>
+                            <div class="flex-1 flex flex-col gap-4">
+                                <div>
+                                    <div
+                                        class="inline-block px-3 py-1 bg-kawaii-yellow text-[#181114] text-xs font-bold rounded-full mb-2 border border-orange-100">
+                                        BRANDING</div>
+                                    <!-- TÍTULO DEL PROYECTO - Cambia aquí -->
+                                    <h2 class="text-2xl md:text-3xl font-bold text-[#181114] leading-tight mb-2">
+                                        Identidad Corporativa - Nombre del Cliente</h2>
+                                    <!-- DESCRIPCIÓN - Cambia aquí -->
+                                    <p class="text-[#8a6075] text-base leading-relaxed">
+                                        Describe aquí tu proyecto de diseño de marca. Explica el concepto, los colores
+                                        utilizados, y cómo la identidad refleja los valores del cliente.
+                                    </p>
+                                </div>
+                                <!-- TAGS - Personaliza aquí -->
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Illustrator</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Branding</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#LogoDesign</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- GALERÍA DE IMÁGENES ADICIONALES - Cambia las 3 URLs aquí -->
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="aspect-square rounded-lg bg-cover bg-center border-2 border-white shadow-sm hover:scale-105 transition-transform cursor-pointer"
+                                style="background-image: url('https://images.unsplash.com/photo-1634942537034-2531766767d1?w=300&h=300&fit=crop');">
+                            </div>
+                            <div class="aspect-square rounded-lg bg-cover bg-center border-2 border-white shadow-sm hover:scale-105 transition-transform cursor-pointer"
+                                style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300&h=300&fit=crop');">
+                            </div>
+                            <div class="aspect-square rounded-lg bg-cover bg-center border-2 border-white shadow-sm hover:scale-105 transition-transform cursor-pointer"
+                                style="background-image: url('https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=300&h=300&fit=crop');">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VENTANA 2: PROYECTOS WEB -->
+            <div id="web-window"
+                class="project-window hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] z-20 w-[90%] max-w-[800px] flex flex-col rounded-xl shadow-window overflow-hidden border-4 border-kawaii-purple bg-white">
+                <div class="bg-kawaii-purple px-4 py-3 flex items-center justify-between cursor-move window-header">
+                    <div class="flex items-center gap-2">
+                        <div class="flex gap-2">
+                            <div class="w-3 h-3 rounded-full bg-[#FF6B6B] border border-black/10"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#FFD93D] border border-black/10"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#6BCB77] border border-black/10"></div>
+                        </div>
+                        <div class="ml-4 flex items-center gap-2 bg-white/30 px-3 py-0.5 rounded-full">
+                            <span class="material-symbols-outlined text-white text-sm">folder_open</span>
+                            <span class="text-white text-xs font-bold tracking-wide">Proyectos Web</span>
+                        </div>
+                    </div>
+                    <button class="text-white hover:bg-white/20 rounded-full p-1 close-window-btn">
+                        <span class="material-symbols-outlined text-lg">close</span>
+                    </button>
+                </div>
+                <div class="p-0 overflow-y-auto max-h-[60vh] bg-background-light">
+                    <div
+                        class="px-6 py-3 border-b border-[#f5f0f2] bg-white flex items-center gap-2 text-sm text-[#8a6075]">
+                        <span class="material-symbols-outlined text-lg">home</span>
+                        <span>/</span>
+                        <span class="font-bold text-primary">Proyectos Web</span>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <!-- PROYECTO WEB -->
+                        <div class="flex flex-col lg:flex-row gap-6 items-start mb-8">
+                            <!-- IMAGEN PRINCIPAL - Cambia el URL aquí -->
+                            <div class="w-full lg:w-1/2 aspect-video bg-cover bg-center rounded-xl shadow-inner border-2 border-[#f5f0f2]"
+                                style="background-image: url('https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&h=400&fit=crop');">
+                            </div>
+                            <div class="flex-1 flex flex-col gap-4">
+                                <div>
+                                    <div
+                                        class="inline-block px-3 py-1 bg-kawaii-yellow text-[#181114] text-xs font-bold rounded-full mb-2 border border-orange-100">
+                                        WEB DESIGN</div>
+                                    <!-- TÍTULO - Cambia aquí -->
+                                    <h2 class="text-2xl md:text-3xl font-bold text-[#181114] leading-tight mb-2">
+                                        Diseño Web - Nombre del Proyecto</h2>
+                                    <!-- DESCRIPCIÓN - Cambia aquí -->
+                                    <p class="text-[#8a6075] text-base leading-relaxed">
+                                        Describe tu proyecto web aquí. Menciona las tecnologías usadas, el objetivo del
+                                        sitio, y los elementos de diseño destacados.
+                                    </p>
+                                </div>
+                                <!-- TAGS -->
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Figma</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#WebDesign</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#UX/UI</span>
+                                </div>
+                                <!-- BOTÓN OPCIONAL - Agrega link del sitio si existe -->
+                                <div class="mt-4">
+                                    <a href="#" target="_blank"
+                                        class="inline-flex items-center justify-center rounded-full h-10 px-6 bg-primary text-white text-sm font-bold shadow-chunky-primary hover:translate-y-[2px] hover:shadow-none transition-all border-2 border-primary">
+                                        Visitar Sitio ✨
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- GALERÍA - Cambia las URLs -->
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="aspect-square rounded-lg bg-cover bg-center border-2 border-white shadow-sm hover:scale-105 transition-transform cursor-pointer"
+                                style="background-image: url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=300&h=300&fit=crop');">
+                            </div>
+                            <div class="aspect-square rounded-lg bg-cover bg-center border-2 border-white shadow-sm hover:scale-105 transition-transform cursor-pointer"
+                                style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=300&h=300&fit=crop');">
+                            </div>
+                            <div class="aspect-square rounded-lg bg-cover bg-center border-2 border-white shadow-sm hover:scale-105 transition-transform cursor-pointer"
+                                style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=300&fit=crop');">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VENTANA 3: ILUSTRACIONES -->
+            <div id="illustration-window"
+                class="project-window hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] z-20 w-[90%] max-w-[800px] flex flex-col rounded-xl shadow-window overflow-hidden border-4 border-kawaii-purple bg-white">
+                <div class="bg-kawaii-purple px-4 py-3 flex items-center justify-between cursor-move window-header">
+                    <div class="flex items-center gap-2">
+                        <div class="flex gap-2">
+                            <div class="w-3 h-3 rounded-full bg-[#FF6B6B] border border-black/10"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#FFD93D] border border-black/10"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#6BCB77] border border-black/10"></div>
+                        </div>
+                        <div class="ml-4 flex items-center gap-2 bg-white/30 px-3 py-0.5 rounded-full">
+                            <span class="material-symbols-outlined text-white text-sm">folder_open</span>
+                            <span class="text-white text-xs font-bold tracking-wide">Ilustraciones</span>
+                        </div>
+                    </div>
+                    <button class="text-white hover:bg-white/20 rounded-full p-1 close-window-btn">
+                        <span class="material-symbols-outlined text-lg">close</span>
+                    </button>
+                </div>
+                <div class="p-0 overflow-y-auto max-h-[60vh] bg-background-light">
+                    <div
+                        class="px-6 py-3 border-b border-[#f5f0f2] bg-white flex items-center gap-2 text-sm text-[#8a6075]">
+                        <span class="material-symbols-outlined text-lg">home</span>
+                        <span>/</span>
+                        <span class="font-bold text-primary">Ilustraciones</span>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <!-- PROYECTO DE ILUSTRACIÓN -->
+                        <div class="flex flex-col lg:flex-row gap-6 items-start mb-8">
+                            <!-- IMAGEN PRINCIPAL -->
+                            <div class="w-full lg:w-1/2 aspect-video bg-cover bg-center rounded-xl shadow-inner border-2 border-[#f5f0f2]"
+                                style="background-image: url('https://images.unsplash.com/photo-1618172193622-ae2d025f4032?w=600&h=400&fit=crop');">
+                            </div>
+                            <div class="flex-1 flex flex-col gap-4">
+                                <div>
+                                    <div
+                                        class="inline-block px-3 py-1 bg-kawaii-yellow text-[#181114] text-xs font-bold rounded-full mb-2 border border-orange-100">
+                                        ILUSTRACIÓN</div>
+                                    <!-- TÍTULO -->
+                                    <h2 class="text-2xl md:text-3xl font-bold text-[#181114] leading-tight mb-2">
+                                        Serie de Ilustraciones - Tema</h2>
+                                    <!-- DESCRIPCIÓN -->
+                                    <p class="text-[#8a6075] text-base leading-relaxed">
+                                        Describe tu trabajo de ilustración. Menciona el estilo, técnicas utilizadas, y
+                                        la inspiración detrás del proyecto.
+                                    </p>
+                                </div>
+                                <!-- TAGS -->
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Procreate</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#DigitalArt</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Illustration</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- GALERÍA DE ILUSTRACIONES -->
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="aspect-square rounded-lg bg-cover bg-center border-2 border-white shadow-sm hover:scale-105 transition-transform cursor-pointer"
+                                style="background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=300&h=300&fit=crop');">
+                            </div>
+                            <div class="aspect-square rounded-lg bg-cover bg-center border-2 border-white shadow-sm hover:scale-105 transition-transform cursor-pointer"
+                                style="background-image: url('https://images.unsplash.com/photo-1618172193763-c511deb635ca?w=300&h=300&fit=crop');">
+                            </div>
+                            <div class="aspect-square rounded-lg bg-cover bg-center border-2 border-white shadow-sm hover:scale-105 transition-transform cursor-pointer"
+                                style="background-image: url('https://images.unsplash.com/photo-1561998338-13ad7883b20f?w=300&h=300&fit=crop');">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VENTANA 4: EXPERIMENTOS -->
+            <div id="playground-window"
+                class="project-window absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] z-20 w-[90%] max-w-[800px] flex flex-col rounded-xl shadow-window overflow-hidden border-4 border-kawaii-purple bg-white">
+                <div class="bg-kawaii-purple px-4 py-3 flex items-center justify-between cursor-move window-header">
+                    <div class="flex items-center gap-2">
+                        <div class="flex gap-2">
+                            <div class="w-3 h-3 rounded-full bg-[#FF6B6B] border border-black/10"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#FFD93D] border border-black/10"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#6BCB77] border border-black/10"></div>
+                        </div>
+                        <div class="ml-4 flex items-center gap-2 bg-white/30 px-3 py-0.5 rounded-full">
+                            <span class="material-symbols-outlined text-white text-sm">folder_open</span>
+                            <span class="text-white text-xs font-bold tracking-wide">Experimentos</span>
+                        </div>
+                    </div>
+                    <button class="text-white hover:bg-white/20 rounded-full p-1 close-window-btn">
+                        <span class="material-symbols-outlined text-lg">close</span>
+                    </button>
+                </div>
+                <div class="p-0 overflow-y-auto max-h-[60vh] bg-background-light">
+                    <div
+                        class="px-6 py-3 border-b border-[#f5f0f2] bg-white flex items-center gap-2 text-sm text-[#8a6075]">
+                        <span class="material-symbols-outlined text-lg">home</span>
+                        <span>/</span>
+                        <span class="font-bold text-primary">Experimentos</span>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <!-- PROYECTO EXPERIMENTAL -->
+                        <div class="flex flex-col lg:flex-row gap-6 items-start mb-8">
+                            <!-- IMAGEN PRINCIPAL -->
+                            <div class="w-full lg:w-1/2 aspect-video bg-cover bg-center rounded-xl shadow-inner border-2 border-[#f5f0f2]"
+                                style="background-image: url('https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=600&h=400&fit=crop');">
+                            </div>
+                            <div class="flex-1 flex flex-col gap-4">
+                                <div>
+                                    <div
+                                        class="inline-block px-3 py-1 bg-kawaii-yellow text-[#181114] text-xs font-bold rounded-full mb-2 border border-orange-100">
+                                        EXPERIMENTAL</div>
+                                    <!-- TÍTULO -->
+                                    <h2 class="text-2xl md:text-3xl font-bold text-[#181114] leading-tight mb-2">
+                                        Proyecto Experimental - Concepto</h2>
+                                    <!-- DESCRIPCIÓN -->
+                                    <p class="text-[#8a6075] text-base leading-relaxed">
+                                        Aquí puedes mostrar tus trabajos más creativos y experimentales. Proyectos
+                                        personales, pruebas de estilo, o conceptos innovadores.
+                                    </p>
+                                </div>
+                                <!-- TAGS -->
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Creative</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Concept</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Art</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- GALERÍA -->
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="aspect-square rounded-lg bg-cover bg-center border-2 border-white shadow-sm hover:scale-105 transition-transform cursor-pointer"
+                                style="background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=300&h=300&fit=crop');">
+                            </div>
+                            <div class="aspect-square rounded-lg bg-cover bg-center border-2 border-white shadow-sm hover:scale-105 transition-transform cursor-pointer"
+                                style="background-image: url('https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?w=300&h=300&fit=crop');">
+                            </div>
+                            <div class="aspect-square rounded-lg bg-cover bg-center border-2 border-white shadow-sm hover:scale-105 transition-transform cursor-pointer"
+                                style="background-image: url('https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?w=300&h=300&fit=crop');">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mascot Widget (Bottom Right) -->
+            <div
+                class="absolute bottom-24 right-6 md:bottom-28 md:right-10 z-30 flex flex-col items-end gap-2 animate-bounce-slow">
+                <div
+                    class="bg-white px-4 py-3 rounded-xl rounded-br-none shadow-lg border-2 border-primary relative max-w-[200px]">
+                    <p class="text-sm font-bold text-[#181114]">¡Haz clic en una carpeta para ver mi trabajo! ✨</p>
+                    <div
+                        class="absolute -bottom-[2px] -right-[2px] w-4 h-4 bg-white border-b-2 border-r-2 border-primary rotate-45 translate-y-1/2">
+                    </div>
+                </div>
+                <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full border-4 border-white shadow-xl bg-cover bg-center overflow-hidden"
+                    data-alt="Pixel art avatar of the designer"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAH-hor1CLOsO_D63vqAg0qyzXr_rD8fObktKzFmhD4fx0HusMY23UC0AR1lu1XCcyF73J3dmBA1IbCI95MhKktd8hUuWWmdjPghHd_92RaapSBU3aQCJvXjOItRV7s6roaCXw-b3Oh47gYweg9jO5rzeI51ec-tULsUipopZsO1hGHOBvLecu48MqJ1Ga8oCylNNiEEJhiovz6gyuAsQSMi56BE40st0RebstcqnHY2AYhXBVpNS_4ZmdRp7RhxpwduV9yENpWnzbp');">
+                </div>
+                <div
+                    class="bg-black/50 backdrop-blur-md text-white text-[10px] px-2 py-0.5 rounded-full mt-1 font-mono">
+                    NIVEL 24 DISEÑADORA
+                </div>
+            </div>
+            <!-- Bottom Dock Navigation -->
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-40 w-full max-w-lg px-4">
+                <div
+                    class="bg-white/40 backdrop-blur-xl border border-white/60 rounded-full p-2 flex items-center justify-center gap-2 md:gap-4 shadow-[0_8px_32px_rgba(31,38,135,0.15)] ring-1 ring-white/50">
+                    <!-- Dock Item: Home -->
+                    <button
+                        class="relative group flex flex-col items-center gap-1 p-2 transition-all hover:-translate-y-2">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-pink-400 to-primary rounded-xl flex items-center justify-center shadow-lg text-white group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">home</span>
+                        </div>
+                        <div
+                            class="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 text-white text-xs px-2 py-1 rounded-md whitespace-nowrap">
+                            Inicio</div>
+                        <div class="w-1 h-1 rounded-full bg-primary mt-1"></div>
+                    </button>
+                    <!-- Dock Item: About -->
+                    <button
+                        class="relative group flex flex-col items-center gap-1 p-2 transition-all hover:-translate-y-2">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-xl flex items-center justify-center shadow-lg text-white group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">person</span>
+                        </div>
+                        <div
+                            class="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 text-white text-xs px-2 py-1 rounded-md whitespace-nowrap">
+                            Sobre Mí</div>
+                    </button>
+                    <!-- Dock Item: Work (Active) -->
+                    <button
+                        class="relative group flex flex-col items-center gap-1 p-2 transition-all hover:-translate-y-2">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-xl flex items-center justify-center shadow-lg text-white group-hover:scale-110 transition-transform ring-2 ring-offset-2 ring-blue-300">
+                            <span class="material-symbols-outlined text-2xl">folder</span>
+                        </div>
+                        <div
+                            class="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 text-white text-xs px-2 py-1 rounded-md whitespace-nowrap">
+                            Mi Trabajo</div>
+                        <div class="w-1 h-1 rounded-full bg-primary mt-1"></div>
+                    </button>
+                    <!-- Dock Item: Contact -->
+                    <button
+                        class="relative group flex flex-col items-center gap-1 p-2 transition-all hover:-translate-y-2">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-xl flex items-center justify-center shadow-lg text-white group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">mail</span>
+                        </div>
+                        <div
+                            class="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 text-white text-xs px-2 py-1 rounded-md whitespace-nowrap">
+                            Contacto</div>
+                    </button>
+                    <div class="w-[1px] h-8 bg-white/50 mx-1"></div>
+                    <!-- Dock Item: Trash -->
+                    <button
+                        class="relative group flex flex-col items-center gap-1 p-2 transition-all hover:-translate-y-2">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full flex items-center justify-center shadow-lg text-white group-hover:scale-110 transition-transform grayscale hover:grayscale-0">
+                            <span class="material-symbols-outlined text-2xl">delete</span>
+                        </div>
+                        <div
+                            class="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 text-white text-xs px-2 py-1 rounded-md whitespace-nowrap">
+                            Papelera</div>
+                    </button>
+                </div>
+            </div>
+            <!-- VENTANA: SOBRE MÍ -->
+            <div id="about-window"
+                class="project-window hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[90%] max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-kawaii-yellow z-40">
+                <div class="window-header bg-kawaii-yellow px-6 py-3 flex items-center justify-between cursor-move">
+                    <div class="flex items-center gap-2">
+                        <div class="flex gap-1.5">
+                            <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                        </div>
+                        <span class="text-[#181114] text-xs font-bold tracking-wide ml-2">Sobre Mí - Magdyel</span>
+                    </div>
+                    <button class="text-[#181114] hover:bg-black/10 rounded-full p-1 close-window-btn">
+                        <span class="material-symbols-outlined text-lg">close</span>
+                    </button>
+                </div>
+                <div class="p-8 flex flex-col md:flex-row gap-8 items-center bg-background-light">
+                    <!-- Avatar/Imagen -->
+                    <div
+                        class="w-48 h-48 rounded-full border-4 border-white shadow-lg overflow-hidden flex-shrink-0 bg-primary/20 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-6xl text-primary">person</span>
+                    </div>
+                    <!-- Texto de Bio -->
+                    <div class="flex-1 space-y-4 text-center md:text-left">
+                        <h2 class="text-3xl font-bold text-[#181114]">¡Hola, soy Magdyel! ✨</h2>
+                        <p class="text-[#8a6075] leading-relaxed">
+                            Soy una diseñadora gráfica apasionada por crear experiencias visuales únicas y memorables.
+                            Mi enfoque combina la creatividad con la funcionalidad para ayudar a las marcas a brillar en
+                            el mundo digital.
+                        </p>
+                        <p class="text-[#8a6075] leading-relaxed">
+                            Especializada en identidad de marca, diseño web e ilustración digital. Siempre buscando
+                            nuevos retos y formas de innovar a través del diseño.
+                        </p>
+                        <!-- Botón Descargar CV -->
+                        <div class="pt-4">
+                            <button id="download-cv-btn-modal"
+                                class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-bold rounded-2xl hover:scale-105 transition-transform shadow-lg group">
+                                <span class="material-symbols-outlined group-hover:animate-bounce">download</span>
+                                Descargar CV
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODAL DE CONTACTO -->
+            <div id="contact-modal"
+                class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+                <div class="bg-white rounded-2xl shadow-2xl w-[90%] max-w-md overflow-hidden border-4 border-primary">
+                    <div class="bg-primary px-6 py-4 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-white text-2xl">mail</span>
+                            <h3 class="text-white font-bold text-lg">Contacto</h3>
+                        </div>
+                        <button class="text-white hover:bg-white/20 rounded-full p-1 transition-colors"
+                            id="close-contact-modal">
+                            <span class="material-symbols-outlined text-xl">close</span>
+                        </button>
+                    </div>
+                    <div class="p-8 space-y-6 text-center">
+                        <p class="text-[#8a6075] font-medium">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+                        <div class="space-y-4">
+                            <!-- Email -->
+                            <a href="mailto:magdyel@ejemplo.com"
+                                class="flex items-center gap-4 p-4 bg-kawaii-purple/10 rounded-2xl hover:bg-kawaii-purple/20 transition-colors border-2 border-transparent hover:border-primary/20 group">
+                                <div
+                                    class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <span class="material-symbols-outlined text-white text-2xl">email</span>
+                                </div>
+                                <div class="text-left overflow-hidden">
+                                    <p class="text-xs font-bold text-primary uppercase tracking-tighter">Email</p>
+                                    <p class="text-[#181114] font-bold truncate">magdyelht@gmail.com</p>
+                                </div>
+                            </a>
+                            <!-- Teléfono/WhatsApp -->
+                            <a href="https://wa.me/51941774779" target="_blank"
+                                class="flex items-center gap-4 p-4 bg-green-50 rounded-2xl hover:bg-green-100 transition-colors border-2 border-transparent hover:border-green-500/20 group">
+                                <div
+                                    class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <span class="material-symbols-outlined text-white text-2xl">chat</span>
+                                </div>
+                                <div class="text-left">
+                                    <p class="text-xs font-bold text-green-600 uppercase tracking-tighter">WhatsApp /
+                                        Tel</p>
+                                    <p class="text-[#181114] font-bold">+51 941 774 779</p>
+                                </div>
+                            </a>
+                        </div>
+                        <p class="text-xs text-[#8a6075] italic">Respondo lo más pronto posible ✨</p>
+                    </div>
+                </div>
+            </div>
+            <!-- VENTANA: PAPELERA -->
+            <div id="trash-window"
+                class="project-window hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-sm bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-gray-300 z-40">
+                <div class="window-header bg-gray-200 px-6 py-3 flex items-center justify-between cursor-move">
+                    <div class="flex items-center gap-2">
+                        <div class="flex gap-1.5">
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                        </div>
+                        <span class="text-gray-600 text-xs font-bold tracking-wide ml-2">Papelera</span>
+                    </div>
+                    <button class="text-gray-600 hover:bg-black/10 rounded-full p-1 close-window-btn">
+                        <span class="material-symbols-outlined text-lg">close</span>
+                    </button>
+                </div>
+                <div class="p-8 text-center space-y-4 bg-gray-50">
+                    <div
+                        class="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-white shadow-inner">
+                        <span class="material-symbols-outlined text-4xl text-gray-400">delete_sweep</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-700">¡Vaya, está vacío! ✨</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        No hay nada aquí. El trabajo de Magdyel es demasiado bueno para tirarlo a la basura.
+                    </p>
+                    <div class="pt-2">
+                        <p class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">0 elementos encontrados
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
