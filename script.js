@@ -102,13 +102,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!header) return;
 
         header.addEventListener("mousedown", (e) => dragStart(e, elmnt));
+        header.addEventListener("touchstart", (e) => dragStart(e, elmnt), { passive: false });
     }
 
     function dragStart(e, elmnt) {
         bringToFront(elmnt);
 
-        initialX = e.clientX - xOffset;
-        initialY = e.clientY - yOffset;
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+        initialX = clientX - xOffset;
+        initialY = clientY - yOffset;
 
         activeWindow = elmnt;
         isDragging = true;
@@ -127,20 +131,28 @@ document.addEventListener('DOMContentLoaded', () => {
             elmnt.style.transform = 'none';
             elmnt.classList.remove('-translate-x-1/2', '-translate-y-[55%]', '-translate-y-1/2', 'top-1/2', 'left-1/2');
 
-            initialX = e.clientX - xOffset;
-            initialY = e.clientY - yOffset;
+            initialX = clientX - xOffset;
+            initialY = clientY - yOffset;
         }
 
         document.addEventListener("mousemove", drag);
         document.addEventListener("mouseup", dragEnd);
+        document.addEventListener("touchmove", drag, { passive: false });
+        document.addEventListener("touchend", dragEnd);
     }
 
     function drag(e) {
         if (isDragging && activeWindow) {
-            e.preventDefault();
+            if (e.touches) {
+                // Prevent scrolling page while dragging window
+                e.preventDefault();
+            }
 
-            currentX = e.clientX - initialX;
-            currentY = e.clientY - initialY;
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+            currentX = clientX - initialX;
+            currentY = clientY - initialY;
 
             // Prevent dragging window above the screen top header bar (min Y = 40px)
             const minY = 40;
@@ -162,6 +174,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.removeEventListener("mousemove", drag);
         document.removeEventListener("mouseup", dragEnd);
+        document.removeEventListener("touchmove", drag);
+        document.removeEventListener("touchend", dragEnd);
     }
 
     // --- Gallery Interactive Switcher (Illustration Window) ---
@@ -185,6 +199,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const title = thumb.getAttribute('data-title');
             const desc = thumb.getAttribute('data-desc');
             const tags = thumb.getAttribute('data-tags');
+
+            const driveLink = thumb.getAttribute('data-drive-link');
+            const illActionContainer = document.getElementById('ill-action-container');
+            const illDriveLink = document.getElementById('ill-drive-link');
+
+            if (driveLink && illActionContainer && illDriveLink) {
+                illDriveLink.href = driveLink;
+                illActionContainer.classList.remove('hidden');
+            } else if (illActionContainer) {
+                illActionContainer.classList.add('hidden');
+            }
 
             if (mainImg && src) {
                 mainImg.src = src;

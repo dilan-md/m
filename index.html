@@ -73,7 +73,6 @@
         .cursor-pencil {
             cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="%23f43494"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg>') 0 24, auto;
         }
-
     </style>
 </head>
 
@@ -113,52 +112,75 @@
         <!-- Main Desktop Area -->
         <main class="flex-1 relative w-full h-full p-6 overflow-hidden" id="desktop-main">
             <!-- Desktop Text/Welcome -->
-            <div class="absolute top-8 left-0 w-full flex justify-center pointer-events-none z-0">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-[#181114] text-center drop-shadow-sm opacity-90">
+            <div class="absolute top-4 sm:top-8 left-0 w-full flex justify-center pointer-events-none z-0 px-2">
+                <h1
+                    class="text-2xl sm:text-4xl md:text-6xl font-extrabold text-[#181114] text-center drop-shadow-sm opacity-90">
                     <span class="text-white text-stroke-primary drop-shadow-md block md:inline">Bienvenido a</span>
-                    <span class="text-primary bg-white px-4 rounded-xl rotate-2 inline-block shadow-chunky">Mi
+                    <span
+                        class="text-primary bg-white px-3 sm:px-4 rounded-xl rotate-2 inline-block shadow-chunky text-xl sm:text-4xl md:text-6xl">Mi
                         Escritorio!</span>
-                    <span class="text-2xl align-middle ml-2">(◕‿◕)</span>
+                    <span class="text-lg sm:text-2xl align-middle ml-1">(◕‿◕)</span>
                 </h1>
             </div>
-            <!-- Desktop Icons Grid -->
-            <div class="absolute top-24 left-6 md:left-10 grid grid-cols-1 gap-8 z-10 w-32">
+            <!-- Desktop Icons Grid (Mobile: 2x2 grid, Desktop/PC: Original 2 vertical columns) -->
+            <!-- Columna 1 (Mobile Grid / PC Col 1) -->
+            <div
+                class="absolute top-28 md:top-24 left-4 md:left-10 grid grid-cols-2 md:grid-cols-1 gap-4 md:gap-8 z-10 w-64 md:w-32">
                 <!-- Icon 1 -->
-                <button class="flex flex-col items-center gap-2 group focus:outline-none desktop-icon"
+                <button class="flex flex-col items-center gap-1.5 md:gap-2 group focus:outline-none desktop-icon"
                     data-target="brand-window">
-                    <div class="w-20 h-20 bg-white rounded-[2rem] flex items-center justify-center shadow-lg border-4 border-transparent group-hover:border-primary/30 transition-all group-hover:scale-105 active:scale-95 bg-cover bg-center"
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center shadow-lg border-4 border-transparent group-hover:border-primary/30 transition-all group-hover:scale-105 active:scale-95 bg-cover bg-center"
                         data-alt="Cute bear folder icon"
                         style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfOaM615mruN9gml4f1r6i7KJCEFxtz6mNHFDJ7qZTUWUek0Lrj9UgXKbFYSmMdH91PL1BkzOPwR_KjlhCf-hGjLAMwP11EVj8Se3niaI_ZXgxoq_jJ2F7DyFhG5927x3yGQwVeOD7ca0B-niWI2PRUfpoqOits6V092sCY46KR75ptPTwbOtdy_ELhlCp1HfVP6mp4gKy7mltAQ9cCAV9-8v0bUf62P_jQv3AvQlKoDVbjK7sGSJfDS71O1tD-NL3vt_rm0GiPBKE');">
                     </div>
-                    <div class="bg-white/80 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm border border-white/50">
-                        <span class="text-xs font-bold text-[#181114] whitespace-nowrap">Diseño de Marca</span>
+                    <div
+                        class="bg-white/80 backdrop-blur-sm px-2.5 py-0.5 md:px-3 md:py-1 rounded-lg shadow-sm border border-white/50">
+                        <span class="text-[11px] md:text-xs font-bold text-[#181114] whitespace-nowrap">Diseño de
+                            Marca</span>
                     </div>
                 </button>
                 <!-- Icon 2 -->
-                <button class="flex flex-col items-center gap-2 group focus:outline-none desktop-icon"
+                <button class="flex flex-col items-center gap-1.5 md:gap-2 group focus:outline-none desktop-icon"
                     data-target="web-window">
-                    <div class="w-20 h-20 bg-white rounded-[2rem] flex items-center justify-center shadow-lg border-4 border-transparent group-hover:border-primary/30 transition-all group-hover:scale-105 active:scale-95 bg-cover bg-center"
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center shadow-lg border-4 border-transparent group-hover:border-primary/30 transition-all group-hover:scale-105 active:scale-95 bg-cover bg-center"
                         data-alt="Cute cat folder icon"
                         style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGbh2Xi4_GYWrqRON_H6MCF3UBzo6FofEYygCPEhq4ZKfhAojW0jWy8UtzfKrQu_6gMryAxxXVONYeQWgzYR5jCPkYa36FmQ6cQrFh6Fi0lYXpoqYPXSCQri8NBGc8zemevhhCkhIpHJ7niZAZhwXhmF7_dCEJsu_2ErH2uqZiOYRrwMDsp_K_gdgdWpS13fEZX-N8XCSG6twfErXMsY5XYQxJ345zGlUGnP0pn9cAxe_SPzq8WR11uwnoW9QDjMvSuRkSC17V5flh');">
                     </div>
-                    <div class="bg-white/80 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm border border-white/50">
-                        <span class="text-xs font-bold text-[#181114] whitespace-nowrap">Proyectos Web</span>
+                    <div
+                        class="bg-white/80 backdrop-blur-sm px-2.5 py-0.5 md:px-3 md:py-1 rounded-lg shadow-sm border border-white/50">
+                        <span class="text-[11px] md:text-xs font-bold text-[#181114] whitespace-nowrap">Proyectos
+                            Web</span>
                     </div>
                 </button>
                 <!-- Icon 3 -->
-                <button class="flex flex-col items-center gap-2 group focus:outline-none desktop-icon"
+                <button class="flex flex-col items-center gap-1.5 md:gap-2 group focus:outline-none desktop-icon"
                     data-target="illustration-window">
-                    <div class="w-20 h-20 bg-white rounded-[2rem] flex items-center justify-center shadow-lg border-4 border-transparent group-hover:border-primary/30 transition-all group-hover:scale-105 active:scale-95 bg-cover bg-center"
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center shadow-lg border-4 border-transparent group-hover:border-primary/30 transition-all group-hover:scale-105 active:scale-95 bg-cover bg-center"
                         data-alt="Cute bunny folder icon"
                         style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDcXpwy7px9gvFxVzqCyisfAISlGODOcz-eC6UMuFrU98fBw7_bmf0oKQIlIC58S9JzdQpc-2PNZw3FYfwR3zUY_RhRx3VhwwXEdR3P3jB2Ncc1nYUfHROsHDrfVuTY0RoSvCZODF0DtW9xs1wpkP5RPatdI_MMH_6Lw_dfD7tmZrRDXHTMorc-aZoXIlyH-9cELBW25srxeiKLzOY7ZzdHWcpJCoVbVfk_DQn_Bu94Nrzzdh3e5ic0PwhkGz8tgXVk8e_zKG-M0ao9');">
                     </div>
-                    <div class="bg-white/80 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm border border-white/50">
-                        <span class="text-xs font-bold text-[#181114] whitespace-nowrap">Ilustraciones</span>
+                    <div
+                        class="bg-white/80 backdrop-blur-sm px-2.5 py-0.5 md:px-3 md:py-1 rounded-lg shadow-sm border border-white/50">
+                        <span
+                            class="text-[11px] md:text-xs font-bold text-[#181114] whitespace-nowrap">Ilustraciones</span>
+                    </div>
+                </button>
+                <!-- Icon 4 (Sólo visible en mobile grid) -->
+                <button class="md:hidden flex flex-col items-center gap-1.5 group focus:outline-none desktop-icon"
+                    data-target="playground-window">
+                    <div class="w-16 h-16 bg-white rounded-[1.5rem] flex items-center justify-center shadow-lg border-4 border-transparent group-hover:border-primary/30 transition-all group-hover:scale-105 active:scale-95 bg-cover bg-center"
+                        data-alt="Cute video camera folder icon"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCtMszYIH-hsMQhice7llgKq3vzjvPmzykDCqG-YmYhurE27H6qYb3NT8TQ65GysLoHBwytckvq774PrhdL5z3hlYWMJDGk9-s4C1ZTGwbu2QNalzFaGnsmZH7PlTcRr3IHy-2JlEuFMpZRv8h40DpZUWFI5LUHY913iNZBYUrZdDw3Bw32J7qd7p43GV545JWaFVFg1Q43zSJ8jwm_INWELRg--L2tSvtk2se2hshHkLFJb4ur9AduTkUAEQw2hRZ_cLugCRsE8sR0');">
+                    </div>
+                    <div class="bg-white/80 backdrop-blur-sm px-2.5 py-0.5 rounded-lg shadow-sm border border-white/50">
+                        <span class="text-[11px] font-bold text-[#181114] whitespace-nowrap">Videos & Motion</span>
                     </div>
                 </button>
             </div>
-            <div class="absolute top-24 left-40 md:left-48 grid grid-cols-1 gap-8 z-10 w-32">
-                <!-- Icon 4 (Videos & Motion) -->
+
+            <!-- Columna 2 (PC/Desktop únicamente: Videos & Motion al lado) -->
+            <div class="hidden md:grid absolute top-24 left-48 grid-cols-1 gap-8 z-10 w-32">
+                <!-- Icon 4 (Videos & Motion en PC) -->
                 <button class="flex flex-col items-center gap-2 group focus:outline-none desktop-icon"
                     data-target="playground-window">
                     <div class="w-20 h-20 bg-white rounded-[2rem] flex items-center justify-center shadow-lg border-4 border-transparent group-hover:border-primary/30 transition-all group-hover:scale-105 active:scale-95 bg-cover bg-center"
@@ -206,20 +228,29 @@
 
                         <!-- PROYECTO 1: GLOOVA -->
                         <div class="flex flex-col lg:flex-row gap-6 items-start">
-                            <div class="w-full lg:w-1/2 rounded-xl border-2 border-[#f5f0f2] shadow-inner overflow-hidden bg-white flex items-center justify-center relative group" style="min-height:180px;">
+                            <div class="w-full lg:w-1/2 rounded-xl border-2 border-[#f5f0f2] shadow-inner overflow-hidden bg-white flex items-center justify-center relative group"
+                                style="min-height:180px;">
                                 <img src="GLOOVA1.svg" alt="GLOOVA Brand Design" class="w-full h-full object-contain" />
-                                <a href="GLOOVA1.svg" target="_blank" class="absolute bottom-3 right-3 bg-black/70 hover:bg-primary text-white p-2 rounded-full shadow-md transition-colors z-20" title="Ver imagen en tamaño completo">
+                                <a href="GLOOVA1.svg" target="_blank"
+                                    class="absolute bottom-3 right-3 bg-black/70 hover:bg-primary text-white p-2 rounded-full shadow-md transition-colors z-20"
+                                    title="Ver imagen en tamaño completo">
                                     <span class="material-symbols-outlined text-sm">open_in_new</span>
                                 </a>
                             </div>
                             <div class="flex-1 flex flex-col gap-3">
-                                <div class="inline-block px-3 py-1 bg-kawaii-yellow text-[#181114] text-xs font-bold rounded-full w-fit border border-orange-100">BRANDING</div>
+                                <div
+                                    class="inline-block px-3 py-1 bg-kawaii-yellow text-[#181114] text-xs font-bold rounded-full w-fit border border-orange-100">
+                                    BRANDING</div>
                                 <h2 class="text-2xl md:text-3xl font-bold text-[#181114] leading-tight">GLOOVA</h2>
-                                <p class="text-[#8a6075] text-base leading-relaxed">Identidad visual y diseño de marca para GLOOVA.</p>
+                                <p class="text-[#8a6075] text-base leading-relaxed">Identidad visual y diseño de marca
+                                    para GLOOVA.</p>
                                 <div class="flex flex-wrap gap-2 mt-1">
-                                    <span class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Branding</span>
-                                    <span class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#LogoDesign</span>
-                                    <span class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Illustrator</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Branding</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#LogoDesign</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Illustrator</span>
                                 </div>
                             </div>
                         </div>
@@ -228,20 +259,160 @@
 
                         <!-- PROYECTO 2: POST2 -->
                         <div class="flex flex-col lg:flex-row gap-6 items-start">
-                            <div class="w-full lg:w-1/2 rounded-xl border-2 border-[#f5f0f2] shadow-inner overflow-hidden bg-white flex items-center justify-center relative group" style="min-height:180px;">
+                            <div class="w-full lg:w-1/2 rounded-xl border-2 border-[#f5f0f2] shadow-inner overflow-hidden bg-white flex items-center justify-center relative group"
+                                style="min-height:180px;">
                                 <img src="post2.svg" alt="Post2 Brand Design" class="w-full h-full object-contain" />
-                                <a href="post2.svg" target="_blank" class="absolute bottom-3 right-3 bg-black/70 hover:bg-primary text-white p-2 rounded-full shadow-md transition-colors z-20" title="Ver imagen en tamaño completo">
+                                <a href="post2.svg" target="_blank"
+                                    class="absolute bottom-3 right-3 bg-black/70 hover:bg-primary text-white p-2 rounded-full shadow-md transition-colors z-20"
+                                    title="Ver imagen en tamaño completo">
                                     <span class="material-symbols-outlined text-sm">open_in_new</span>
                                 </a>
                             </div>
                             <div class="flex-1 flex flex-col gap-3">
-                                <div class="inline-block px-3 py-1 bg-kawaii-yellow text-[#181114] text-xs font-bold rounded-full w-fit border border-orange-100">BRANDING</div>
-                                <h2 class="text-2xl md:text-3xl font-bold text-[#181114] leading-tight">Post2</h2>
-                                <p class="text-[#8a6075] text-base leading-relaxed">Diseño de identidad visual y piezas gráficas para Post2.</p>
+                                <div
+                                    class="inline-block px-3 py-1 bg-kawaii-yellow text-[#181114] text-xs font-bold rounded-full w-fit border border-orange-100">
+                                    BRANDING</div>
+                                <h2 class="text-2xl md:text-3xl font-bold text-[#181114] leading-tight">Post para la
+                                    marca Mifi</h2>
+                                <p class="text-[#8a6075] text-base leading-relaxed">Diseño de identidad visual y piezas
+                                    gráficas para Mifi.</p>
                                 <div class="flex flex-wrap gap-2 mt-1">
-                                    <span class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Branding</span>
-                                    <span class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#GraphicDesign</span>
-                                    <span class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Illustrator</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Branding</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#GraphicDesign</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Illustrator</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="border-[#f5f0f2]" />
+
+                        <!-- PROYECTO 3: RED BULL -->
+                        <div class="flex flex-col lg:flex-row gap-6 items-start">
+                            <div class="w-full lg:w-1/2 rounded-xl border-2 border-[#f5f0f2] shadow-inner overflow-hidden bg-white flex items-center justify-center relative group"
+                                style="min-height:180px;">
+                                <img src="redbull (1).svg" alt="Red Bull Brand Design"
+                                    class="w-full h-full object-contain" />
+                                <a href="redbull (1).svg" target="_blank"
+                                    class="absolute bottom-3 right-3 bg-black/70 hover:bg-primary text-white p-2 rounded-full shadow-md transition-colors z-20"
+                                    title="Ver imagen en tamaño completo">
+                                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </a>
+                            </div>
+                            <div class="flex-1 flex flex-col gap-3">
+                                <div
+                                    class="inline-block px-3 py-1 bg-kawaii-yellow text-[#181114] text-xs font-bold rounded-full w-fit border border-orange-100">
+                                    BRANDING</div>
+                                <h2 class="text-2xl md:text-3xl font-bold text-[#181114] leading-tight">Red Bull</h2>
+                                <p class="text-[#8a6075] text-base leading-relaxed">Arte y gráficos de marca en formato
+                                    SVG para Red Bull.</p>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Branding</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#RedBull</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Illustrator</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="border-[#f5f0f2]" />
+
+                        <!-- PROYECTO 4: POSTO -->
+                        <div class="flex flex-col lg:flex-row gap-6 items-start">
+                            <div class="w-full lg:w-1/2 rounded-xl border-2 border-[#f5f0f2] shadow-inner overflow-hidden bg-white flex items-center justify-center relative group"
+                                style="min-height:180px;">
+                                <img src="posto.svg" alt="Posto Brand Design" class="w-full h-full object-contain" />
+                                <a href="posto.svg" target="_blank"
+                                    class="absolute bottom-3 right-3 bg-black/70 hover:bg-primary text-white p-2 rounded-full shadow-md transition-colors z-20"
+                                    title="Ver imagen en tamaño completo">
+                                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </a>
+                            </div>
+                            <div class="flex-1 flex flex-col gap-3">
+                                <div
+                                    class="inline-block px-3 py-1 bg-kawaii-yellow text-[#181114] text-xs font-bold rounded-full w-fit border border-orange-100">
+                                    BRANDING</div>
+                                <h2 class="text-2xl md:text-3xl font-bold text-[#181114] leading-tight">Post agencia
+                                    Slinky</h2>
+                                <p class="text-[#8a6075] text-base leading-relaxed">Post para slinky.</p>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Branding</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Posto</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Design</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="border-[#f5f0f2]" />
+
+                        <!-- PROYECTO 5: TRABAJO REVISTA -->
+                        <div class="flex flex-col lg:flex-row gap-6 items-start">
+                            <div class="w-full lg:w-1/2 rounded-xl border-2 border-[#f5f0f2] shadow-inner overflow-hidden bg-white flex items-center justify-center relative group"
+                                style="min-height:180px;">
+                                <img src="trabajo revistaso.svg" alt="Trabajo Revista"
+                                    class="w-full h-full object-contain" />
+                                <a href="trabajo revistaso.svg" target="_blank"
+                                    class="absolute bottom-3 right-3 bg-black/70 hover:bg-primary text-white p-2 rounded-full shadow-md transition-colors z-20"
+                                    title="Ver imagen en tamaño completo">
+                                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </a>
+                            </div>
+                            <div class="flex-1 flex flex-col gap-3">
+                                <div
+                                    class="inline-block px-3 py-1 bg-kawaii-yellow text-[#181114] text-xs font-bold rounded-full w-fit border border-orange-100">
+                                    BRANDING</div>
+                                <h2 class="text-2xl md:text-3xl font-bold text-[#181114] leading-tight">Trabajo Revista
+                                </h2>
+                                <p class="text-[#8a6075] text-base leading-relaxed">Diseño editorial e ilustración de
+                                    marca en SVG.</p>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Branding</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Editorial</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#SVG</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="border-[#f5f0f2]" />
+
+
+                        <!-- PROYECTO 7: RIFAULO -->
+                        <div class="flex flex-col lg:flex-row gap-6 items-start">
+                            <div class="w-full lg:w-1/2 rounded-xl border-2 border-[#f5f0f2] shadow-inner overflow-hidden bg-white flex items-center justify-center relative group"
+                                style="min-height:180px;">
+                                <img src="rifaulo (1).svg" alt="Rifaulo Brand Design"
+                                    class="w-full h-full object-contain" />
+                                <a href="rifaulo (1).svg" target="_blank"
+                                    class="absolute bottom-3 right-3 bg-black/70 hover:bg-primary text-white p-2 rounded-full shadow-md transition-colors z-20"
+                                    title="Ver imagen en tamaño completo">
+                                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </a>
+                            </div>
+                            <div class="flex-1 flex flex-col gap-3">
+                                <div
+                                    class="inline-block px-3 py-1 bg-kawaii-yellow text-[#181114] text-xs font-bold rounded-full w-fit border border-orange-100">
+                                    BRANDING</div>
+                                <h2 class="text-2xl md:text-3xl font-bold text-[#181114] leading-tight">Rifa economia
+                                </h2>
+                                <p class="text-[#8a6075] text-base leading-relaxed">Carrusel rifa colegio economia de
+                                    Ancash.</p>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Branding</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#Rifaulo</span>
+                                    <span
+                                        class="px-2 py-1 bg-[#f5f0f2] text-xs font-medium text-[#181114] rounded-md">#SVG</span>
                                 </div>
                             </div>
                         </div>
@@ -265,7 +436,8 @@
                             <span class="text-white text-xs font-bold tracking-wide">Proyectos Web</span>
                         </div>
                     </div>
-                    <button class="text-white hover:bg-white/20 rounded-full p-1 close-window-btn" aria-label="Cerrar ventana">
+                    <button class="text-white hover:bg-white/20 rounded-full p-1 close-window-btn"
+                        aria-label="Cerrar ventana">
                         <span class="material-symbols-outlined text-lg">close</span>
                     </button>
                 </div>
@@ -279,25 +451,33 @@
                     <div class="p-6 md:p-8">
                         <!-- PROYECTO WEB DESTACADO -->
                         <div class="flex flex-col lg:flex-row gap-6 items-start mb-8">
-                            <div class="w-full lg:w-1/2 aspect-video bg-white rounded-xl shadow-inner border-2 border-[#f5f0f2] overflow-hidden flex items-center justify-center p-2 relative group">
-                                <img id="web-main-img" src="shibazoomies.webp" alt="Shiba Zoomies Web" class="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105" />
+                            <div
+                                class="w-full lg:w-1/2 aspect-video bg-white rounded-xl shadow-inner border-2 border-[#f5f0f2] overflow-hidden flex items-center justify-center p-2 relative group">
+                                <img id="web-main-img" src="shibazoomies.webp" alt="Shiba Zoomies Web"
+                                    class="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105" />
                             </div>
                             <div class="flex-1 flex flex-col gap-4">
                                 <div>
                                     <div
                                         class="inline-block px-3 py-1 bg-kawaii-yellow text-[#181114] text-xs font-bold rounded-full mb-2 border border-orange-100 uppercase tracking-wide">
                                         WEB DESIGN & DEVELOPMENT</div>
-                                    <h2 id="web-title" class="text-2xl md:text-3xl font-bold text-[#181114] leading-tight mb-2">
+                                    <h2 id="web-title"
+                                        class="text-2xl md:text-3xl font-bold text-[#181114] leading-tight mb-2">
                                         Shiba Zoomies</h2>
                                     <p id="web-desc" class="text-[#8a6075] text-base leading-relaxed">
-                                        Sitio web interactivo y dinámico desarrollado para Shiba Zoomies. Diseño moderno, colores armoniosos y excelente experiencia de usuario.
+                                        Sitio web interactivo y dinámico desarrollado para Shiba Zoomies. Diseño
+                                        moderno, colores armoniosos y excelente experiencia de usuario.
                                     </p>
                                 </div>
                                 <div id="web-tags" class="flex flex-wrap gap-2 mt-2">
-                                    <span class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#ShibaZoomies</span>
-                                    <span class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#WebDesign</span>
-                                    <span class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#Vercel</span>
-                                    <span class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#Frontend</span>
+                                    <span
+                                        class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#ShibaZoomies</span>
+                                    <span
+                                        class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#WebDesign</span>
+                                    <span
+                                        class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#Vercel</span>
+                                    <span
+                                        class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#Frontend</span>
                                 </div>
                                 <div class="mt-2">
                                     <a id="web-visit-link" href="https://shibazoomies.vercel.app/" target="_blank"
@@ -312,53 +492,69 @@
                         <!-- GALERÍA HORIZONTAL DE PROYECTOS WEB -->
                         <div class="border-t border-gray-200/60 pt-4">
                             <div class="flex items-center justify-between mb-3">
-                                <h3 class="text-xs font-bold text-[#8a6075] uppercase tracking-wider">Galería de sitios web (Haz clic para seleccionar):</h3>
+                                <h3 class="text-xs font-bold text-[#8a6075] uppercase tracking-wider">Galería de sitios
+                                    web (Haz clic para seleccionar):</h3>
                                 <div class="flex items-center gap-1.5">
-                                    <button id="web-scroll-left" class="w-8 h-8 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-primary hover:text-white text-[#181114] flex items-center justify-center transition-colors focus:outline-none" title="Desplazar a la izquierda">
+                                    <button id="web-scroll-left"
+                                        class="w-8 h-8 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-primary hover:text-white text-[#181114] flex items-center justify-center transition-colors focus:outline-none"
+                                        title="Desplazar a la izquierda">
                                         <span class="material-symbols-outlined text-lg">chevron_left</span>
                                     </button>
-                                    <button id="web-scroll-right" class="w-8 h-8 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-primary hover:text-white text-[#181114] flex items-center justify-center transition-colors focus:outline-none" title="Desplazar a la derecha">
+                                    <button id="web-scroll-right"
+                                        class="w-8 h-8 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-primary hover:text-white text-[#181114] flex items-center justify-center transition-colors focus:outline-none"
+                                        title="Desplazar a la derecha">
                                         <span class="material-symbols-outlined text-lg">chevron_right</span>
                                     </button>
                                 </div>
                             </div>
 
-                            <div id="web-gallery-strip" class="flex items-center gap-4 overflow-x-auto pb-3 scroll-smooth scrollbar-thin">
+                            <div id="web-gallery-strip"
+                                class="flex items-center gap-4 overflow-x-auto pb-3 scroll-smooth scrollbar-thin">
                                 <!-- Proyecto 1: Shiba Zoomies -->
-                                <button class="web-thumb active flex-shrink-0 w-48 sm:w-56 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-primary bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
-                                    data-src="shibazoomies.webp"
-                                    data-url="https://shibazoomies.vercel.app/"
+                                <button
+                                    class="web-thumb active flex-shrink-0 w-48 sm:w-56 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-primary bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
+                                    data-src="shibazoomies.webp" data-url="https://shibazoomies.vercel.app/"
                                     data-title="Shiba Zoomies"
                                     data-desc="Sitio web interactivo y dinámico desarrollado para Shiba Zoomies. Diseño moderno, colores armoniosos y excelente experiencia de usuario."
                                     data-tags="#ShibaZoomies,#WebDesign,#Vercel,#Frontend">
-                                    <div class="w-full aspect-video bg-gray-50 rounded-lg overflow-hidden flex items-center justify-center">
-                                        <img src="shibazoomies.webp" alt="Shiba Zoomies" class="w-full h-full object-cover" />
+                                    <div
+                                        class="w-full aspect-video bg-gray-50 rounded-lg overflow-hidden flex items-center justify-center">
+                                        <img src="shibazoomies.webp" alt="Shiba Zoomies"
+                                            class="w-full h-full object-cover" />
                                     </div>
-                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">Shiba Zoomies</span>
+                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">Shiba
+                                        Zoomies</span>
                                 </button>
                                 <!-- Proyecto 2: Restaurante Luxe -->
-                                <button class="web-thumb flex-shrink-0 w-48 sm:w-56 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-gray-100 hover:border-primary/50 bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
-                                    data-src="luxe1.webp"
-                                    data-url="https://restaurante-luxe.vercel.app/"
+                                <button
+                                    class="web-thumb flex-shrink-0 w-48 sm:w-56 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-gray-100 hover:border-primary/50 bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
+                                    data-src="luxe1.webp" data-url="https://restaurante-luxe.vercel.app/"
                                     data-title="Restaurante Luxe"
                                     data-desc="Diseño elegante y sofisticado para sitio web gastronómico de alta cocina. Interfaz intuitiva y menú digital."
                                     data-tags="#RestauranteLuxe,#Gastronomía,#WebDesign,#UX/UI">
-                                    <div class="w-full aspect-video bg-gray-50 rounded-lg overflow-hidden flex items-center justify-center">
-                                        <img src="luxe1.webp" alt="Restaurante Luxe" class="w-full h-full object-cover" />
+                                    <div
+                                        class="w-full aspect-video bg-gray-50 rounded-lg overflow-hidden flex items-center justify-center">
+                                        <img src="luxe1.webp" alt="Restaurante Luxe"
+                                            class="w-full h-full object-cover" />
                                     </div>
-                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">Restaurante Luxe</span>
+                                    <span
+                                        class="text-xs font-bold text-[#181114] truncate w-full text-center">Restaurante
+                                        Luxe</span>
                                 </button>
                                 <!-- Proyecto 3: S-Tier -->
-                                <button class="web-thumb flex-shrink-0 w-48 sm:w-56 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-gray-100 hover:border-primary/50 bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
-                                    data-src="s-tier.webp"
-                                    data-url="https://s-tier-nine.vercel.app/"
+                                <button
+                                    class="web-thumb flex-shrink-0 w-48 sm:w-56 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-gray-100 hover:border-primary/50 bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
+                                    data-src="s-tier.webp" data-url="https://s-tier-nine.vercel.app/"
                                     data-title="S-Tier Platform"
                                     data-desc="Plataforma web S-Tier con diseño limpio, contraste oscuro y tipografía moderna orientada a la experiencia digital."
                                     data-tags="#STier,#Platform,#WebDevelopment,#UI/UX">
-                                    <div class="w-full aspect-video bg-gray-50 rounded-lg overflow-hidden flex items-center justify-center">
-                                        <img src="s-tier.webp" alt="S-Tier Platform" class="w-full h-full object-cover" />
+                                    <div
+                                        class="w-full aspect-video bg-gray-50 rounded-lg overflow-hidden flex items-center justify-center">
+                                        <img src="s-tier.webp" alt="S-Tier Platform"
+                                            class="w-full h-full object-cover" />
                                     </div>
-                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">S-Tier</span>
+                                    <span
+                                        class="text-xs font-bold text-[#181114] truncate w-full text-center">S-Tier</span>
                                 </button>
                             </div>
                         </div>
@@ -381,7 +577,8 @@
                             <span class="text-white text-xs font-bold tracking-wide">Ilustraciones Vectoriales</span>
                         </div>
                     </div>
-                    <button class="text-white hover:bg-white/20 rounded-full p-1 close-window-btn" aria-label="Cerrar ventana">
+                    <button class="text-white hover:bg-white/20 rounded-full p-1 close-window-btn"
+                        aria-label="Cerrar ventana">
                         <span class="material-symbols-outlined text-lg">close</span>
                     </button>
                 </div>
@@ -396,10 +593,14 @@
                         <!-- PROYECTO DE ILUSTRACIÓN -->
                         <div class="flex flex-col lg:flex-row gap-6 items-start mb-8">
                             <!-- VISTA PREVIA PRINCIPAL -->
-                            <div class="w-full lg:w-1/2 aspect-square md:aspect-video bg-white rounded-xl shadow-inner border-2 border-[#f5f0f2] overflow-hidden flex items-center justify-center p-3 relative group">
-                                <img id="illustration-main-img" src="redbull (1).svg" alt="Ilustración vectorial Red Bull" class="w-full h-full object-contain max-h-[350px] transition-all duration-300 group-hover:scale-105" />
-                                
-                                <a id="illustration-view-link" href="redbull (1).svg" target="_blank" class="absolute bottom-3 right-3 bg-black/70 hover:bg-primary text-white p-2 rounded-full shadow-md transition-colors z-20" title="Ver SVG completo en nueva pestaña">
+                            <div
+                                class="w-full lg:w-1/2 aspect-square md:aspect-video bg-white rounded-xl shadow-inner border-2 border-[#f5f0f2] overflow-hidden flex items-center justify-center p-3 relative group">
+                                <img id="illustration-main-img" src="vi-gif.gif" alt="Animación Vi — Ilustración"
+                                    class="w-full h-full object-contain max-h-[350px] transition-all duration-300 group-hover:scale-105" />
+
+                                <a id="illustration-view-link" href="vi-gif.gif" target="_blank"
+                                    class="absolute bottom-3 right-3 bg-black/70 hover:bg-primary text-white p-2 rounded-full shadow-md transition-colors z-20"
+                                    title="Ver archivo completo en nueva pestaña">
                                     <span class="material-symbols-outlined text-sm">open_in_new</span>
                                 </a>
                             </div>
@@ -407,83 +608,97 @@
                                 <div>
                                     <div
                                         class="inline-block px-3 py-1 bg-kawaii-yellow text-[#181114] text-xs font-bold rounded-full mb-2 border border-orange-100 uppercase tracking-wide">
-                                        ILUSTRACIÓN VECTORIAL</div>
+                                        ILUSTRACIÓN & ANIMACIÓN</div>
                                     <!-- TÍTULO -->
-                                    <h2 id="illustration-title" class="text-2xl md:text-3xl font-bold text-[#181114] leading-tight mb-2">
-                                        Red Bull — Ilustración Vectorial</h2>
+                                    <h2 id="illustration-title"
+                                        class="text-2xl md:text-3xl font-bold text-[#181114] leading-tight mb-2">
+                                        Vi — Ilustración Animada</h2>
                                     <!-- DESCRIPCIÓN -->
                                     <p id="illustration-desc" class="text-[#8a6075] text-base leading-relaxed">
-                                        Arte vectorial detallado de Red Bull creado en formato SVG de alta definición.
+                                        Ilustración de personaje de Vi.
                                     </p>
                                 </div>
                                 <!-- TAGS -->
                                 <div id="illustration-tags" class="flex flex-wrap gap-2 mt-2">
-                                    <span class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#Vector</span>
-                                    <span class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#RedBull</span>
-                                    <span class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#Branding</span>
-                                    <span class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#Illustration</span>
+                                    <span
+                                        class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#Vi</span>
+                                    <span
+                                        class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#Ilustración</span>
+                                    <span
+                                        class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#CharacterDesign</span>
+                                    <span
+                                        class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#Animation</span>
+                                </div>
+                                <div id="ill-action-container" class="mt-2 hidden">
+                                    <a id="ill-drive-link" href="#" target="_blank"
+                                        class="inline-flex items-center justify-center gap-2 rounded-full h-11 px-6 bg-primary text-white text-sm font-bold shadow-chunky-primary hover:translate-y-[2px] hover:shadow-none transition-all border-2 border-primary">
+                                        <span>Ver en Google Drive</span>
+                                        <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                         <!-- GALERÍA DE ILUSTRACIONES EN TIRA HORIZONTAL -->
                         <div class="border-t border-gray-200/60 pt-4">
                             <div class="flex items-center justify-between mb-3">
-                                <h3 class="text-xs font-bold text-[#8a6075] uppercase tracking-wider">Galería del proyecto (Desplaza horizontalmente):</h3>
+                                <h3 class="text-xs font-bold text-[#8a6075] uppercase tracking-wider">Galería de
+                                    Ilustración (Desplaza horizontalmente):</h3>
                                 <div class="flex items-center gap-1.5">
-                                    <button id="ill-scroll-left" class="w-8 h-8 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-primary hover:text-white text-[#181114] flex items-center justify-center transition-colors focus:outline-none" title="Desplazar a la izquierda">
+                                    <button id="ill-scroll-left"
+                                        class="w-8 h-8 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-primary hover:text-white text-[#181114] flex items-center justify-center transition-colors focus:outline-none"
+                                        title="Desplazar a la izquierda">
                                         <span class="material-symbols-outlined text-lg">chevron_left</span>
                                     </button>
-                                    <button id="ill-scroll-right" class="w-8 h-8 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-primary hover:text-white text-[#181114] flex items-center justify-center transition-colors focus:outline-none" title="Desplazar a la derecha">
+                                    <button id="ill-scroll-right"
+                                        class="w-8 h-8 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-primary hover:text-white text-[#181114] flex items-center justify-center transition-colors focus:outline-none"
+                                        title="Desplazar a la derecha">
                                         <span class="material-symbols-outlined text-lg">chevron_right</span>
                                     </button>
                                 </div>
                             </div>
-                            
+
                             <!-- Tira Horizontal Scrollable -->
-                            <div id="ill-gallery-strip" class="flex items-center gap-4 overflow-x-auto pb-3 scroll-smooth scrollbar-thin">
-                                <!-- Elemento 1: redbull (1).svg -->
-                                <button class="gallery-thumb active flex-shrink-0 w-40 sm:w-48 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-primary bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
-                                    data-src="redbull (1).svg"
-                                    data-title="Red Bull — Ilustración Vectorial"
-                                    data-desc="Arte vectorial detallado de Red Bull creado en formato SVG de alta definición."
-                                    data-tags="#Vector,#RedBull,#Branding,#Illustration">
-                                    <div class="w-full aspect-square bg-gray-50 rounded-lg overflow-hidden flex items-center justify-center p-1">
-                                        <img src="redbull (1).svg" alt="Red Bull SVG" class="w-full h-full object-contain" />
+                            <div id="ill-gallery-strip"
+                                class="flex items-center gap-4 overflow-x-auto pb-3 scroll-smooth scrollbar-thin">
+                                <!-- Elemento 1: vi-gif.gif -->
+                                <button
+                                    class="gallery-thumb active flex-shrink-0 w-40 sm:w-48 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-primary bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
+                                    data-src="vi-gif.gif" data-title="Vi — Ilustración Animada"
+                                    data-desc="Ilustración de personaje de Vi en formato animado."
+                                    data-tags="#Vi,#Ilustración,#CharacterDesign,#Animation">
+                                    <div
+                                        class="w-full aspect-square bg-gray-50 rounded-lg overflow-hidden flex items-center justify-center p-1">
+                                        <img src="vi-gif.gif" alt="Vi GIF" class="w-full h-full object-contain" />
                                     </div>
-                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">Red Bull</span>
+                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">Vi</span>
                                 </button>
-                                <!-- Elemento 2: posto.svg -->
-                                <button class="gallery-thumb flex-shrink-0 w-40 sm:w-48 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-gray-100 hover:border-primary/50 bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
-                                    data-src="posto.svg"
-                                    data-title="Posto — Ilustración Digital"
-                                    data-desc="Diseño y gráficos vectoriales orientados a publicaciones y contenido creativo."
-                                    data-tags="#Posto,#Vector,#Design,#SVG">
-                                    <div class="w-full aspect-square bg-gray-50 rounded-lg overflow-hidden flex items-center justify-center p-1">
-                                        <img src="posto.svg" alt="Posto SVG" class="w-full h-full object-contain" />
+                                <!-- Elemento 2: croporate mephis.svg -->
+                                <button
+                                    class="gallery-thumb flex-shrink-0 w-40 sm:w-48 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-gray-100 hover:border-primary/50 bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
+                                    data-src="croporate mephis.svg" data-title="Corporate Memphis"
+                                    data-drive-link="https://drive.google.com/file/d/1AY0_itS1yqysQkYzRaENTIlnCKvj7Lwu/view?usp=sharing"
+                                    data-desc="Ilustración estilo Corporate Memphis creada en formato vectorial SVG."
+                                    data-tags="#CorporateMemphis,#Vector,#Illustration,#SVG">
+                                    <div
+                                        class="w-full aspect-square bg-gray-50 rounded-lg overflow-hidden flex items-center justify-center p-1">
+                                        <img src="croporate mephis.svg" alt="Corporate Memphis SVG"
+                                            class="w-full h-full object-contain" />
                                     </div>
-                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">Posto</span>
+                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">Corporate
+                                        Memphis</span>
                                 </button>
-                                <!-- Elemento 3: publicidad politicos.svg -->
-                                <button class="gallery-thumb flex-shrink-0 w-40 sm:w-48 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-gray-100 hover:border-primary/50 bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
-                                    data-src="publicidad politicos.svg"
-                                    data-title="Publicidad Políticos — Diseño Gráfico"
-                                    data-desc="Composición gráfica y diseño publicitario vectorial en SVG para campañas de comunicación."
-                                    data-tags="#Publicidad,#Design,#Campaign,#Vector">
-                                    <div class="w-full aspect-square bg-gray-50 rounded-lg overflow-hidden flex items-center justify-center p-1">
-                                        <img src="publicidad politicos.svg" alt="Publicidad Políticos SVG" class="w-full h-full object-contain" />
+                                <!-- Elemento 3: Poster ilustrado (mi poder.svg) -->
+                                <button
+                                    class="gallery-thumb flex-shrink-0 w-40 sm:w-48 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-gray-100 hover:border-primary/50 bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
+                                    data-src="mi poder.svg" data-title="Poster ilustrado"
+                                    data-desc="Ilustración tipo poster vectorial SVG con estilo único y colorido."
+                                    data-tags="#Poster,#Ilustración,#MiPoder,#Vector">
+                                    <div
+                                        class="w-full aspect-square bg-gray-50 rounded-lg overflow-hidden flex items-center justify-center p-1">
+                                        <img src="mi poder.svg" alt="Poster ilustrado SVG"
+                                            class="w-full h-full object-contain" />
                                     </div>
-                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">Pub. Políticos</span>
-                                </button>
-                                <!-- Elemento 6: trabajo revistaso.svg -->
-                                <button class="gallery-thumb flex-shrink-0 w-40 sm:w-48 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-gray-100 hover:border-primary/50 bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
-                                    data-src="trabajo revistaso.svg"
-                                    data-title="Trabajo Revista — Diseño Editorial"
-                                    data-desc="Diagramación e ilustración editorial en formato vectorial SVG para publicaciones impresas y digitales."
-                                    data-tags="#Editorial,#Revista,#Vector,#Design">
-                                    <div class="w-full aspect-square bg-gray-50 rounded-lg overflow-hidden flex items-center justify-center p-1">
-                                        <img src="trabajo revistaso.svg" alt="Trabajo Revista SVG" class="w-full h-full object-contain" />
-                                    </div>
-                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">Diseño Revista</span>
+                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">Poster ilustrado</span>
                                 </button>
                             </div>
                         </div>
@@ -506,7 +721,8 @@
                             <span class="text-white text-xs font-bold tracking-wide">Videos & Motion Design</span>
                         </div>
                     </div>
-                    <button class="text-white hover:bg-white/20 rounded-full p-1 close-window-btn" aria-label="Cerrar ventana">
+                    <button class="text-white hover:bg-white/20 rounded-full p-1 close-window-btn"
+                        aria-label="Cerrar ventana">
                         <span class="material-symbols-outlined text-lg">close</span>
                     </button>
                 </div>
@@ -520,9 +736,12 @@
                     <div class="p-6 md:p-8">
                         <!-- VISTA DE REPRODUCTOR PRINCIPAL -->
                         <div class="flex flex-col lg:flex-row gap-6 items-start mb-8">
-                            <div id="video-media-wrapper" class="w-full lg:w-1/2 aspect-video bg-black rounded-xl shadow-inner border-2 border-[#f5f0f2] overflow-hidden flex items-center justify-center relative group">
-                                <img id="main-gif-player" src="vi-gif.gif" alt="Vi GIF Animado" class="w-full h-full object-contain" />
-                                <video id="main-video-player" controls preload="none" class="w-full h-full object-contain hidden">
+                            <div id="video-media-wrapper"
+                                class="w-full lg:w-1/2 aspect-video bg-black rounded-xl shadow-inner border-2 border-[#f5f0f2] overflow-hidden flex items-center justify-center relative group">
+                                <img id="main-gif-player" src="vi-gif.gif" alt="Vi GIF Animado"
+                                    class="w-full h-full object-contain" />
+                                <video id="main-video-player" controls preload="none"
+                                    class="w-full h-full object-contain hidden">
                                     <source src="" type="video/mp4">
                                     Tu navegador no soporta reproducción de video HTML5.
                                 </video>
@@ -532,20 +751,24 @@
                                     <div
                                         class="inline-block px-3 py-1 bg-kawaii-yellow text-[#181114] text-xs font-bold rounded-full mb-2 border border-orange-100 uppercase tracking-wide">
                                         MOTION & ANIMACIÓN</div>
-                                    <h2 id="video-title" class="text-2xl md:text-3xl font-bold text-[#181114] leading-tight mb-2">
+                                    <h2 id="video-title"
+                                        class="text-2xl md:text-3xl font-bold text-[#181114] leading-tight mb-2">
                                         Animación Vi — Loop GIF</h2>
-                                    <p id="video-desc" class="text-[#8a6075] text-base leading-relaxed">
-                                        Secuencia de animación continua desarrollada en formato GIF para contenido dinámico, redes sociales y Motion Graphics.
-                                    </p>
                                 </div>
                                 <div id="video-tags" class="flex flex-wrap gap-2 mt-2">
-                                    <span class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#GIF</span>
-                                    <span class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#Animation</span>
-                                    <span class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#Vi</span>
-                                    <span class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#Motion</span>
+                                    <span
+                                        class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#GIF</span>
+                                    <span
+                                        class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#Animation</span>
+                                    <span
+                                        class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#Vi</span>
+                                    <span
+                                        class="px-2.5 py-1 bg-[#f5f0f2] text-xs font-semibold text-[#181114] rounded-md">#Motion</span>
                                 </div>
                                 <div id="video-action-container" class="mt-2 hidden">
-                                    <a id="video-drive-link" href="https://drive.google.com/file/d/1rfkB4HWIQjWI1E4FCvDZ0uIRNZ-4Q8H6/view?usp=sharing" target="_blank"
+                                    <a id="video-drive-link"
+                                        href="https://drive.google.com/file/d/1rfkB4HWIQjWI1E4FCvDZ0uIRNZ-4Q8H6/view?usp=sharing"
+                                        target="_blank"
                                         class="inline-flex items-center justify-center gap-2 rounded-full h-11 px-6 bg-primary text-white text-sm font-bold shadow-chunky-primary hover:translate-y-[2px] hover:shadow-none transition-all border-2 border-primary">
                                         <span>Ver en Google Drive</span>
                                         <span class="material-symbols-outlined text-sm">open_in_new</span>
@@ -556,65 +779,97 @@
                         <!-- GALERÍA DE VIDEOS EN TIRA HORIZONTAL -->
                         <div class="border-t border-gray-200/60 pt-4">
                             <div class="flex items-center justify-between mb-3">
-                                <h3 class="text-xs font-bold text-[#8a6075] uppercase tracking-wider">Galería de animaciones y videos (Desplaza horizontalmente):</h3>
+                                <h3 class="text-xs font-bold text-[#8a6075] uppercase tracking-wider">Galería de
+                                    animaciones y videos (Desplaza horizontalmente):</h3>
                                 <div class="flex items-center gap-1.5">
-                                    <button id="vid-scroll-left" class="w-8 h-8 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-primary hover:text-white text-[#181114] flex items-center justify-center transition-colors focus:outline-none" title="Desplazar a la izquierda">
+                                    <button id="vid-scroll-left"
+                                        class="w-8 h-8 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-primary hover:text-white text-[#181114] flex items-center justify-center transition-colors focus:outline-none"
+                                        title="Desplazar a la izquierda">
                                         <span class="material-symbols-outlined text-lg">chevron_left</span>
                                     </button>
-                                    <button id="vid-scroll-right" class="w-8 h-8 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-primary hover:text-white text-[#181114] flex items-center justify-center transition-colors focus:outline-none" title="Desplazar a la derecha">
+                                    <button id="vid-scroll-right"
+                                        class="w-8 h-8 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-primary hover:text-white text-[#181114] flex items-center justify-center transition-colors focus:outline-none"
+                                        title="Desplazar a la derecha">
                                         <span class="material-symbols-outlined text-lg">chevron_right</span>
                                     </button>
                                 </div>
                             </div>
-                            
+
                             <!-- Tira Horizontal Scrollable -->
-                            <div id="vid-gallery-strip" class="flex items-center gap-4 overflow-x-auto pb-3 scroll-smooth scrollbar-thin">
+                            <div id="vid-gallery-strip"
+                                class="flex items-center gap-4 overflow-x-auto pb-3 scroll-smooth scrollbar-thin">
                                 <!-- Elemento 1: vi-gif.gif -->
-                                <button class="video-thumb active flex-shrink-0 w-48 sm:w-56 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-primary bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
-                                    data-video-src="vi-gif.gif"
-                                    data-title="Animación Vi — Loop GIF"
-                                    data-desc="Secuencia de animación continua desarrollada en formato GIF para contenido dinámico, redes sociales y Motion Graphics."
+                                <button
+                                    class="video-thumb active flex-shrink-0 w-48 sm:w-56 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-primary bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
+                                    data-video-src="vi-gif.gif" data-title="Animación Vi — Loop GIF"
                                     data-tags="#GIF,#Animation,#Vi,#Motion,#Loop">
-                                    <div class="w-full aspect-video bg-gray-900 rounded-lg overflow-hidden flex items-center justify-center relative">
+                                    <div
+                                        class="w-full aspect-video bg-gray-900 rounded-lg overflow-hidden flex items-center justify-center relative">
                                         <img src="vi-gif.gif" alt="Vi GIF" class="w-full h-full object-cover" />
                                     </div>
-                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">Vi Animación GIF</span>
+                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">Vi
+                                        Animación GIF</span>
                                 </button>
                                 <!-- Elemento 2: Casa de las Tejas -->
-                                <button class="video-thumb flex-shrink-0 w-48 sm:w-56 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-gray-100 hover:border-primary/50 bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
+                                <button
+                                    class="video-thumb flex-shrink-0 w-48 sm:w-56 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-gray-100 hover:border-primary/50 bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
                                     data-video-src="casadelastejas-ezgif.com-video-to-gif-converter.gif"
                                     data-drive-link="https://drive.google.com/file/d/1rfkB4HWIQjWI1E4FCvDZ0uIRNZ-4Q8H6/view?usp=sharing"
-                                    data-title="Casa de las Tejas"
-                                    data-desc="Proyecto audiovisual y motion design creado para Casa de las Tejas."
-                                    data-tags="#MotionDesign,#Animation,#Video">
-                                    <div class="w-full aspect-video bg-gray-900 rounded-lg overflow-hidden flex items-center justify-center relative">
-                                        <img src="casadelastejas-ezgif.com-video-to-gif-converter.gif" alt="Casa de las Tejas GIF" class="w-full h-full object-cover" />
+                                    data-title="Casa de las Tejas" data-tags="#MotionDesign,#Animation,#Video">
+                                    <div
+                                        class="w-full aspect-video bg-gray-900 rounded-lg overflow-hidden flex items-center justify-center relative">
+                                        <img src="casadelastejas-ezgif.com-video-to-gif-converter.gif"
+                                            alt="Casa de las Tejas GIF" class="w-full h-full object-cover" />
                                     </div>
-                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">Casa de las Tejas</span>
+                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">Casa de
+                                        las Tejas</span>
                                 </button>
-                                <!-- Elemento 3: GIF nuevo (ezgif.com-video-to-gif-converter.gif) -->
-                                <button class="video-thumb flex-shrink-0 w-48 sm:w-56 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-gray-100 hover:border-primary/50 bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
+                                <!-- Elemento 3: Motion Design (Link intercambiado a 137e133OO5135LHcWlrv6poUvXMVWuorW) -->
+                                <button
+                                    class="video-thumb flex-shrink-0 w-48 sm:w-56 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-gray-100 hover:border-primary/50 bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
                                     data-video-src="ezgif.com-video-to-gif-converter.gif"
-                                    data-drive-link="https://drive.google.com/file/d/1zsnKG6YEqN4hegilRtfdwf1E8z8IbaIF/view"
-                                    data-title="Motion Design"
-                                    data-desc="Proyecto de animación y motion design en formato GIF."
-                                    data-tags="#MotionDesign,#GIF,#Animation">
-                                    <div class="w-full aspect-video bg-gray-900 rounded-lg overflow-hidden flex items-center justify-center relative">
-                                        <img src="ezgif.com-video-to-gif-converter.gif" alt="Motion Design GIF" class="w-full h-full object-cover" />
-                                    </div>
-                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">Motion Design</span>
-                                </button>
-                                <!-- Elemento 4: GIF nuevo (1) (ezgif.com-video-to-gif-converter (1).gif) -->
-                                <button class="video-thumb flex-shrink-0 w-48 sm:w-56 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-gray-100 hover:border-primary/50 bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
-                                    data-video-src="ezgif.com-video-to-gif-converter (1).gif"
                                     data-drive-link="https://drive.google.com/file/d/137e133OO5135LHcWlrv6poUvXMVWuorW/view"
-                                    data-title="Motion Design 2"
-                                    data-desc="Proyecto de animación y motion design en formato GIF."
+                                    data-title="REEL PROMOCIANAL CAMPAÑA POLITICA"
                                     data-tags="#MotionDesign,#GIF,#Animation">
-                                    <div class="w-full aspect-video bg-gray-900 rounded-lg overflow-hidden flex items-center justify-center relative">
-                                        <img src="ezgif.com-video-to-gif-converter (1).gif" alt="Motion Design 2 GIF" class="w-full h-full object-cover" />
+                                    <div
+                                        class="w-full aspect-video bg-gray-900 rounded-lg overflow-hidden flex items-center justify-center relative">
+                                        <img src="ezgif.com-video-to-gif-converter.gif" alt="Motion Design GIF"
+                                            class="w-full h-full object-cover" />
                                     </div>
-                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">Motion Design 2</span>
+                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">REEL
+                                        PROMOCIANAL
+                                        CAMPAÑA POLITICA</span>
+                                </button>
+                                <!-- Elemento 4: Motion Design 2 (Link intercambiado a 1zsnKG6YEqN4hegilRtfdwf1E8z8IbaIF) -->
+                                <button
+                                    class="video-thumb flex-shrink-0 w-48 sm:w-56 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-gray-100 hover:border-primary/50 bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
+                                    data-video-src="ezgif.com-video-to-gif-converter (1).gif"
+                                    data-drive-link="https://drive.google.com/file/d/1zsnKG6YEqN4hegilRtfdwf1E8z8IbaIF/view"
+                                    data-title="REEL PROMOCIANAL CAMPAÑA POLITICA"
+                                    data-tags="#MotionDesign,#GIF,#Animation">
+                                    <div
+                                        class="w-full aspect-video bg-gray-900 rounded-lg overflow-hidden flex items-center justify-center relative">
+                                        <img src="ezgif.com-video-to-gif-converter (1).gif" alt="Motion Design 2 GIF"
+                                            class="w-full h-full object-cover" />
+                                    </div>
+                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">REEL
+                                        PROMOCIANAL
+                                        CAMPAÑA POLITICA</span>
+                                </button>
+                                <!-- Elemento 5: Proyecto Académico -->
+                                <button
+                                    class="video-thumb flex-shrink-0 w-48 sm:w-56 flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 border-gray-100 hover:border-primary/50 bg-white shadow-sm hover:scale-105 transition-all focus:outline-none"
+                                    data-video-src="proyecto-academico.gif"
+                                    data-drive-link="https://drive.google.com/file/d/1xXjau71QIr1mq9fcrCF2H-dlIfcCGtEa/view?usp=drive_link"
+                                    data-title="VIDEO PRESENTACION AGENCIA - PROYECTO ACADEMICO"
+                                    data-tags="#ProyectoAcademico,#Motion,#GIF,#Animation">
+                                    <div
+                                        class="w-full aspect-video bg-gray-900 rounded-lg overflow-hidden flex items-center justify-center relative">
+                                        <img src="proyecto-academico.gif" alt="Proyecto Académico GIF"
+                                            class="w-full h-full object-cover" />
+                                    </div>
+                                    <span class="text-xs font-bold text-[#181114] truncate w-full text-center">VIDEO
+                                        PRESENTACION AGENCIA - PROYECTO ACADEMICO</span>
                                 </button>
                             </div>
                         </div>
@@ -633,8 +888,7 @@
                     </div>
                 </div>
                 <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full border-4 border-white shadow-xl bg-cover bg-center overflow-hidden"
-                    data-alt="Cute cat avatar of the designer"
-                    style="background-image: url('https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&auto=format&fit=crop&q=80');">
+                    data-alt="Cute animated avatar of the designer" style="background-image: url('pfp.gif');">
                 </div>
                 <div
                     class="bg-black/50 backdrop-blur-md text-white text-[10px] px-2 py-0.5 rounded-full mt-1 font-mono">
@@ -707,8 +961,9 @@
             </div>
             <!-- VENTANA: SOBRE MÍ -->
             <div id="about-window"
-                class="project-window hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[90%] max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-kawaii-yellow z-40">
-                <div class="window-header bg-kawaii-yellow px-6 py-3 flex items-center justify-between cursor-move">
+                class="project-window hidden absolute top-12 sm:top-1/2 left-1/2 -translate-x-1/2 sm:-translate-y-[55%] w-[95%] sm:w-[90%] max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-kawaii-yellow z-40 max-h-[85vh] flex flex-col">
+                <div
+                    class="window-header bg-kawaii-yellow px-4 sm:px-6 py-3 flex items-center justify-between cursor-move flex-shrink-0">
                     <div class="flex items-center gap-2">
                         <div class="flex gap-1.5">
                             <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
@@ -717,29 +972,32 @@
                         </div>
                         <span class="text-[#181114] text-xs font-bold tracking-wide ml-2">Sobre Mí - Magdyel</span>
                     </div>
-                    <button class="text-[#181114] hover:bg-black/10 rounded-full p-1 close-window-btn">
-                        <span class="material-symbols-outlined text-lg">close</span>
+                    <button
+                        class="text-[#181114] hover:bg-black/10 rounded-full p-2 sm:p-1 close-window-btn flex items-center justify-center min-w-[36px] min-h-[36px]"
+                        aria-label="Cerrar ventana">
+                        <span class="material-symbols-outlined text-xl sm:text-lg">close</span>
                     </button>
                 </div>
-                <div class="p-8 flex flex-col md:flex-row gap-8 items-center bg-background-light">
-                    <!-- Avatar/Imagen Gato Cute -->
-                    <div class="w-48 h-48 rounded-full border-4 border-white shadow-lg overflow-hidden flex-shrink-0 bg-cover bg-center"
-                        style="background-image: url('https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&auto=format&fit=crop&q=80');">
+                <div
+                    class="p-5 sm:p-8 flex flex-col md:flex-row gap-6 sm:gap-8 items-center bg-background-light overflow-y-auto">
+                    <!-- Avatar/Imagen Animated GIF -->
+                    <div class="w-32 h-32 sm:w-48 sm:h-48 rounded-full border-4 border-white shadow-lg overflow-hidden flex-shrink-0 bg-cover bg-center"
+                        style="background-image: url('pfp.gif');">
                     </div>
                     <!-- Texto de Bio -->
                     <div class="flex-1 space-y-4 text-center md:text-left">
-                        <h2 class="text-3xl font-bold text-[#181114]">¡Hola, soy Magdyel! ✨</h2>
-                        <p class="text-[#8a6075] leading-relaxed">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-[#181114]">¡Hola, soy Magdyel! ✨</h2>
+                        <p class="text-[#8a6075] text-sm sm:text-base leading-relaxed">
                             Soy una diseñadora gráfica apasionada por crear experiencias visuales únicas y memorables.
                             Mi enfoque combina la creatividad con la funcionalidad para ayudar a las marcas a brillar en
                             el mundo digital.
                         </p>
-                        <p class="text-[#8a6075] leading-relaxed">
+                        <p class="text-[#8a6075] text-sm sm:text-base leading-relaxed">
                             Especializada en identidad de marca, diseño web e ilustración digital. Siempre buscando
                             nuevos retos y formas de innovar a través del diseño.
                         </p>
                         <!-- Botón Descargar CV -->
-                        <div class="pt-4">
+                        <div class="pt-2 sm:pt-4">
                             <a href="cv Magdyel Huaraca.pdf" download="CV_Magdyel_Huaraca.pdf" target="_blank"
                                 id="download-cv-btn-modal"
                                 class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-bold rounded-2xl hover:scale-105 transition-transform shadow-lg group">
@@ -769,32 +1027,46 @@
                         <p class="text-[#8a6075] font-medium">¿Tienes un proyecto en mente? ¡Hablemos!</p>
                         <div class="space-y-4">
                             <!-- Email -->
-                            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-100">
-                                <a href="mailto:magdyelht@gmail.com" class="flex items-center gap-4 flex-1 overflow-hidden">
-                                    <div class="w-11 h-11 bg-primary rounded-xl flex items-center justify-center flex-shrink-0 text-white shadow-sm">
+                            <div
+                                class="flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                                <a href="mailto:magdyelht@gmail.com"
+                                    class="flex items-center gap-4 flex-1 overflow-hidden">
+                                    <div
+                                        class="w-11 h-11 bg-primary rounded-xl flex items-center justify-center flex-shrink-0 text-white shadow-sm">
                                         <span class="material-symbols-outlined text-xl">email</span>
                                     </div>
                                     <div class="text-left overflow-hidden">
-                                        <p class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Email</p>
-                                        <p id="email-text" class="text-[#181114] font-bold text-sm truncate">magdyelht@gmail.com</p>
+                                        <p class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Email
+                                        </p>
+                                        <p id="email-text" class="text-[#181114] font-bold text-sm truncate">
+                                            magdyelht@gmail.com</p>
                                     </div>
                                 </a>
-                                <button id="copy-email-btn" type="button" class="p-2.5 bg-white hover:bg-gray-100 text-[#181114] rounded-xl border border-gray-200 transition-colors flex items-center justify-center ml-2 flex-shrink-0 focus:outline-none" title="Copiar Correo">
+                                <button id="copy-email-btn" type="button"
+                                    class="p-2.5 bg-white hover:bg-gray-100 text-[#181114] rounded-xl border border-gray-200 transition-colors flex items-center justify-center ml-2 flex-shrink-0 focus:outline-none"
+                                    title="Copiar Correo">
                                     <span class="material-symbols-outlined text-lg">content_copy</span>
                                 </button>
                             </div>
                             <!-- Teléfono/WhatsApp -->
-                            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-100">
-                                <a href="https://wa.me/51941774779" target="_blank" class="flex items-center gap-4 flex-1 overflow-hidden">
-                                    <div class="w-11 h-11 bg-[#25D366] rounded-xl flex items-center justify-center flex-shrink-0 text-white shadow-sm">
+                            <div
+                                class="flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                                <a href="https://wa.me/51941774779" target="_blank"
+                                    class="flex items-center gap-4 flex-1 overflow-hidden">
+                                    <div
+                                        class="w-11 h-11 bg-[#25D366] rounded-xl flex items-center justify-center flex-shrink-0 text-white shadow-sm">
                                         <span class="material-symbols-outlined text-xl">chat</span>
                                     </div>
                                     <div class="text-left overflow-hidden">
-                                        <p class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">WhatsApp / Tel</p>
-                                        <p id="phone-text" class="text-[#181114] font-bold text-sm truncate">+51 941 774 779</p>
+                                        <p class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">WhatsApp
+                                            / Tel</p>
+                                        <p id="phone-text" class="text-[#181114] font-bold text-sm truncate">+51 941 774
+                                            779</p>
                                     </div>
                                 </a>
-                                <button id="copy-phone-btn" type="button" class="p-2.5 bg-white hover:bg-gray-100 text-[#181114] rounded-xl border border-gray-200 transition-colors flex items-center justify-center ml-2 flex-shrink-0 focus:outline-none" title="Copiar Teléfono">
+                                <button id="copy-phone-btn" type="button"
+                                    class="p-2.5 bg-white hover:bg-gray-100 text-[#181114] rounded-xl border border-gray-200 transition-colors flex items-center justify-center ml-2 flex-shrink-0 focus:outline-none"
+                                    title="Copiar Teléfono">
                                     <span class="material-symbols-outlined text-lg">content_copy</span>
                                 </button>
                             </div>
