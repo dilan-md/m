@@ -900,7 +900,8 @@
                     class="bg-white/40 backdrop-blur-xl border border-white/60 rounded-full p-1.5 md:p-2 flex items-center justify-center gap-1.5 md:gap-4 shadow-[0_8px_32px_rgba(31,38,135,0.15)] ring-1 ring-white/50">
                     <!-- Dock Item: Home -->
                     <button
-                        class="relative group flex flex-col items-center gap-1 p-2 transition-all hover:-translate-y-2">
+                        class="dock-item relative group flex flex-col items-center gap-1 p-2 transition-all hover:-translate-y-2"
+                        data-target="home" aria-label="Ir a Inicio">
                         <div
                             class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-pink-400 to-primary rounded-xl flex items-center justify-center shadow-lg text-white group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-2xl">home</span>
@@ -912,7 +913,8 @@
                     </button>
                     <!-- Dock Item: About -->
                     <button
-                        class="relative group flex flex-col items-center gap-1 p-2 transition-all hover:-translate-y-2">
+                        class="dock-item relative group flex flex-col items-center gap-1 p-2 transition-all hover:-translate-y-2"
+                        data-target="about-window" aria-label="Ver Sobre Mí">
                         <div
                             class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-xl flex items-center justify-center shadow-lg text-white group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-2xl">person</span>
@@ -923,7 +925,8 @@
                     </button>
                     <!-- Dock Item: Work (Active) -->
                     <button
-                        class="relative group flex flex-col items-center gap-1 p-2 transition-all hover:-translate-y-2">
+                        class="dock-item relative group flex flex-col items-center gap-1 p-2 transition-all hover:-translate-y-2"
+                        data-target="brand-window" aria-label="Ver Mi Trabajo">
                         <div
                             class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-xl flex items-center justify-center shadow-lg text-white group-hover:scale-110 transition-transform ring-2 ring-offset-2 ring-blue-300">
                             <span class="material-symbols-outlined text-2xl">folder</span>
@@ -935,7 +938,8 @@
                     </button>
                     <!-- Dock Item: Contact -->
                     <button
-                        class="relative group flex flex-col items-center gap-1 p-2 transition-all hover:-translate-y-2">
+                        class="dock-item relative group flex flex-col items-center gap-1 p-2 transition-all hover:-translate-y-2"
+                        data-target="contact-modal" aria-label="Contacto">
                         <div
                             class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-xl flex items-center justify-center shadow-lg text-white group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-2xl">mail</span>
@@ -947,7 +951,8 @@
                     <div class="w-[1px] h-8 bg-white/50 mx-1"></div>
                     <!-- Dock Item: Trash -->
                     <button
-                        class="relative group flex flex-col items-center gap-1 p-2 transition-all hover:-translate-y-2">
+                        class="dock-item relative group flex flex-col items-center gap-1 p-2 transition-all hover:-translate-y-2"
+                        data-target="trash-window" aria-label="Papelera">
                         <div
                             class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full flex items-center justify-center shadow-lg text-white group-hover:scale-110 transition-transform grayscale hover:grayscale-0">
                             <span class="material-symbols-outlined text-2xl">delete</span>

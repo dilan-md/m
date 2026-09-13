@@ -343,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // pauseMainVideo is defined earlier in the file
 
     // --- Dock Interactions ---
-    const dockItems = document.querySelectorAll('.bottom-6 button');
+    const dockItems = document.querySelectorAll('.dock-item');
 
     dockItems.forEach((item) => {
         item.addEventListener('click', () => {
@@ -363,16 +363,17 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.add('animate-bounce');
             setTimeout(() => item.classList.remove('animate-bounce'), 1000);
 
+            const target = item.getAttribute('data-target');
             const labelEl = item.querySelector('.opacity-0');
-            if (!labelEl) return;
-            const label = labelEl.textContent.trim();
+            const label = labelEl ? labelEl.textContent.trim() : '';
 
-            if (label === 'Papelera') {
+            if (label === 'Papelera' || target === 'trash-window') {
                 openWindow('trash-window');
-            } else if (label === 'Inicio') {
+            } else if (label === 'Inicio' || target === 'home') {
                 Object.values(windows).forEach(win => {
                     if (win) win.classList.add('hidden');
                 });
+                pauseMainVideo();
                 const mascotMsg = document.querySelector('.animate-bounce-slow p');
                 if (mascotMsg) {
                     const messages = [
@@ -383,13 +384,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     ];
                     mascotMsg.textContent = messages[Math.floor(Math.random() * messages.length)];
                 }
-            } else if (label === 'Mi Trabajo') {
-                openWindow('illustration-window');
-            } else if (label === 'Sobre Mí') {
+            } else if (label === 'Mi Trabajo' || target === 'brand-window') {
+                openWindow('brand-window');
+            } else if (label === 'Sobre Mí' || target === 'about-window') {
                 openWindow('about-window');
-            } else if (label === 'Contacto') {
+            } else if (label === 'Contacto' || target === 'contact-modal') {
                 const modal = document.getElementById('contact-modal');
-                if (modal) modal.classList.remove('hidden');
+                if (modal) {
+                    modal.classList.remove('hidden');
+                } else {
+                    openWindow('about-window');
+                }
             }
         });
     });
