@@ -154,9 +154,16 @@ document.addEventListener('DOMContentLoaded', () => {
             currentX = clientX - initialX;
             currentY = clientY - initialY;
 
-            // Prevent dragging window above the screen top header bar (min Y = 40px)
-            const minY = 40;
-            const maxY = window.innerHeight - 80;
+            // Restrict window drag boundaries so header & close button never go offscreen
+            const winWidth = activeWindow.offsetWidth || 300;
+            const minX = 10;
+            const maxX = Math.max(10, window.innerWidth - winWidth - 10);
+
+            const minY = 45; // Below system status bar
+            const maxY = Math.max(45, window.innerHeight - 100); // Above bottom dock
+
+            if (currentX < minX) currentX = minX;
+            if (currentX > maxX) currentX = maxX;
             if (currentY < minY) currentY = minY;
             if (currentY > maxY) currentY = maxY;
 
